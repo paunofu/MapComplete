@@ -301,7 +301,7 @@ export default class OpeningHoursVisualization extends Toggle {
             const el = new Combine([
                 new FixedUiElement(changeHourText[i])
                     .SetClass(
-                        "relative bg-white pl-1 pr-1 h-3 font-sm rounded-xl border-2 border-black  border-opacity-50"
+                        "relative bg-white dark:bg-black pl-1 pr-1 h-3 font-sm rounded-xl border-2 border-black  border-opacity-50"
                     )
                     .SetStyle("left: -50%; word-break:initial"),
             ])

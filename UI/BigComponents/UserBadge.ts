@@ -108,7 +108,7 @@ export default class UserBadge extends LoginToggle {
                             }
                         })
 
-                    return new Combine([usertext, userIcon]).SetClass("h-16 flex bg-white")
+                    return new Combine([usertext, userIcon]).SetClass("h-16 flex bg-white dark:bg-black")
                 }
             })
         )

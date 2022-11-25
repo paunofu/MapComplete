@@ -27,7 +27,7 @@ export default class CenterMessageBox extends VariableUiElement {
 
         this.SetClass(
             "flex justify-center " +
-                "rounded-3xl bg-white text-xl font-bold pointer-events-none p-4"
+                "rounded-3xl bg-white dark:bg-black text-xl font-bold pointer-events-none p-4"
         )
         this.SetStyle("transition: opacity 750ms linear")
 

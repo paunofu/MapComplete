@@ -103,7 +103,7 @@ export default class MoreScreen extends Combine {
         const searchBar = new Combine([
             Svg.search_svg().SetClass("w-8"),
             search.SetClass("mr-4 w-full"),
-        ]).SetClass("flex rounded-full border-2 border-black items-center my-2 w-1/2")
+        ]).SetClass("flex rounded-full border-2 border-black items-center my-2 w-1/2 soft")
 
         super([
             new Combine([searchBar]).SetClass("flex justify-center"),

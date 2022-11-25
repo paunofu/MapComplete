@@ -116,7 +116,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                         const els = []
                         const thanks = new Combine([
                             Svg.party_svg().SetClass(
-                                "w-12 h-12 shrink-0 p-1 m-1 bg-white rounded-full block"
+                                "w-12 h-12 shrink-0 p-1 m-1 bg-white dark:bg-black rounded-full block"
                             ),
                             t.newlyCreated,
                         ]).SetClass("flex w-full thanks content-center")

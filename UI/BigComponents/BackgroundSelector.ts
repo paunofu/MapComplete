@@ -32,7 +32,7 @@ export default class BackgroundSelector extends VariableUiElement {
                     baseLayers,
                     State.state.backgroundLayer,
                     {
-                        select_class: "bg-indigo-100 p-1 rounded hover:bg-indigo-200 w-full",
+                        select_class: "bg-indigo-100 dark:bg-indigo-800 p-1 rounded hover:bg-indigo-200 dark:hover:bg-indigo-900 w-full",
                     }
                 )
             })

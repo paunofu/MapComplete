@@ -46,7 +46,7 @@ export default class DeleteImage extends Toggle {
 
         const cancelButton = Translations.t.general.cancel
             .Clone()
-            .SetClass("bg-white pl-4 pr-4")
+            .SetClass("bg-white dark:bg-black pl-4 pr-4")
             .SetStyle("border-bottom-left-radius:30rem; border-bottom-right-radius: 30rem;")
         const openDelete = Svg.delete_icon_svg().SetStyle("width: 2em; height: 2em; display:block;")
         const deleteDialog = new ClickableToggle(

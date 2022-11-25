@@ -94,6 +94,25 @@
   --variable-title-height: 0px;
 }
 
+/* Dark mode colour scheme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #1a202c;
+    --foreground-color: white;
+    --alert-color: #b45918;
+    --subtle-detail-color: #2d3748;
+    --subtle-detail-color-contrast: white;
+    --subtle-detail-color-light-contrast: #a0aec0;
+    --unsubtle-detail-color: #4a5568;
+    --unsubtle-detail-color-contrast: white;
+    --catch-detail-color: #3a3aeb;
+    --catch-detail-color-contrast: white;
+    --non-active-tab-svg: var(--foreground-color);
+    --shadow-color: #00000066;
+    --popup-border: #2d3748;
+  }
+}
+
 html,
 body {
   height: 100%;
@@ -562,6 +581,7 @@ li::marker {
 
 input {
   color: var(--foreground-color);
+  background-color: var(--background-color);
 }
 
 .leaflet-popup-content {

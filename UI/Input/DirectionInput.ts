@@ -59,7 +59,7 @@ export default class DirectionInput extends InputElement<string> {
             map.SetStyle(`position: absolute;top: 0;left: 0;width: 100%;height: 100%;`),
         ])
             .SetStyle("width: min(100%, 25em); height: 0; padding-bottom: 100%") // A bit a weird CSS   , see https://stackoverflow.com/questions/13851940/pure-css-solution-square-elements#19448481
-            .SetClass("relative block bg-white border border-black overflow-hidden rounded-full")
+            .SetClass("relative block bg-white dark:bg-black border border-black overflow-hidden rounded-full")
             .ConstructElement()
 
         this.value.addCallbackAndRunD((rotation) => {

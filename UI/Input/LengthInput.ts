@@ -78,7 +78,7 @@ export default class LengthInput extends InputElement<string> {
             ),
             map?.SetClass("w-full h-full block absolute top-0 left-O overflow-hidden"),
         ])
-            .SetClass("relative block bg-white border border-black rounded-xl overflow-hidden")
+            .SetClass("relative block bg-white dark:bg-black border border-black rounded-xl overflow-hidden")
             .ConstructElement()
 
         this.RegisterTriggers(

@@ -101,7 +101,7 @@ export default class PlantNetSpeciesSearch extends VariableUiElement {
                                 new Button(
                                     new Combine([
                                         Svg.back_svg().SetClass(
-                                            "w-6 mr-1 bg-white rounded-full p-1"
+                                            "w-6 mr-1 bg-white dark:bg-black rounded-full p-1"
                                         ),
                                         t.back,
                                     ]).SetClass("flex"),
