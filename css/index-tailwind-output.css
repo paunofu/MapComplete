@@ -1863,6 +1863,13 @@ video {
     --shadow-color: #00000066;
     --popup-border: #2d3748;
   }
+
+  /** Save icon should be white in dark mode */
+
+  .save-icon img {
+    -webkit-filter: invert(1);
+            filter: invert(1);
+  }
 }
 
 html,
@@ -2435,6 +2442,10 @@ input {
 .leaflet-div-icon svg {
   width: calc(100%);
   height: calc(100%);
+}
+
+.save-button {
+  border: 1px solid var(--foreground-color);
 }
 
 /****** ShareScreen *****/
