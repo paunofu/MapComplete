@@ -23,7 +23,6 @@
     height: 1em;
     border-radius: 0;
     display: block;
-    color: var(--foreground-color);
 }
 
 .userstats img {
@@ -37,4 +36,11 @@
     background-color: var(--subtle-detail-color) !important;
     color: var(--subtle-detail-color-contrast);
     height: 3em;
+}
+
+/* Override some styles for dark mode */
+@media (prefers-color-scheme: dark) {
+    .userstats svg {
+        filter: invert(1);
+    }
 }
