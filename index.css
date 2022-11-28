@@ -113,7 +113,7 @@
   }
 
   /** Save icon should be white in dark mode */
-  .save-icon img {
+  .save-icon img, .inverted-icon {
     filter: invert(1);
   }
 }
@@ -164,6 +164,7 @@ img {
 .titleicon svg {
   width: unset;
 }
+
 .svg-catch svg path {
   fill: var(--catch-detail-color) !important;
   stroke: var(--catch-detail-color) !important;
