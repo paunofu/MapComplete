@@ -11,7 +11,7 @@ export default class IndexText extends Combine {
 
             new Combine([
                 Translations.t.index.title.SetClass(
-                    "text-2xl tracking-tight font-extrabold text-gray-900 dark:text-white-900 sm:text-5xl md:text-6xl block text-gray-800 dark:text-white-800 xl:inline"
+                    "text-2xl tracking-tight font-extrabold sm:text-5xl md:text-6xl block text-gray-800 dark:text-white xl:inline"
                 ),
 
                 Translations.t.index.intro.SetClass(

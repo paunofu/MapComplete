@@ -9,7 +9,7 @@ export default class Loading extends Combine {
         t.SetClass("pl-2")
         super([
             Svg.loading_svg()
-                .SetClass("animate-spin self-center")
+                .SetClass("animate-spin self-center dark:invert")
                 .SetStyle("width: 1.5rem; height: 1.5rem; min-width: 1.5rem;"),
             t,
         ])
