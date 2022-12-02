@@ -239,7 +239,7 @@ export default class MoveWizard extends Toggle {
             new Combine([
                 Svg.move_not_allowed_svg().SetStyle("height: 2rem").SetClass("m-2"),
                 new Combine([
-                    t.cannotBeMoved,
+                    t.cannotBeMoved.SetClass("dark:text-black"),
                     new VariableUiElement(moveDisallowedReason).SetClass("subtle"),
                 ]).SetClass("flex flex-col"),
             ]).SetClass("flex m-2 p-2 rounded-lg bg-gray-200"),

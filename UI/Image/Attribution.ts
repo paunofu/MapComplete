@@ -25,7 +25,7 @@ export default class Attribution extends VariableUiElement {
                 if (license?.title) {
                     title = Translations.W(license?.title).SetClass("block")
                     if (license.informationLocation) {
-                        title = new Link(title, license.informationLocation.href, true)
+                        title = new Link(title, license.informationLocation.href, true).SetClass("text-black dark:text-white")
                     }
                 }
                 return new Combine([
@@ -42,7 +42,7 @@ export default class Attribution extends VariableUiElement {
                             : new FixedUiElement(date.toLocaleDateString()),
                     ]).SetClass("flex flex-col"),
                 ]).SetClass(
-                    "flex flex-row bg-black text-white text-sm absolute bottom-0 left-0 p-0.5 pl-5 pr-3 rounded-lg no-images"
+                    "flex flex-row bg-black dark:bg-white text-white dark:text-black text-sm absolute bottom-0 left-0 p-0.5 pl-5 pr-3 rounded-lg no-images"
                 )
             })
         )
