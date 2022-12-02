@@ -39,7 +39,7 @@ export default class ReviewElement extends VariableUiElement {
                 elements.push(
                     new Combine([
                         Translations.t.reviews.attribution.Clone(),
-                        new Img("./assets/mangrove_logo.png"),
+                        new Img("./assets/mangrove_logo.png").SetClass("dark:invert"),
                     ]).SetClass("review-attribution")
                 )
 

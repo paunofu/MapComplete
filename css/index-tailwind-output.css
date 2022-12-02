@@ -1863,13 +1863,6 @@ video {
     --shadow-color: #00000066;
     --popup-border: #2d3748;
   }
-
-  /** Save icon should be white in dark mode */
-
-  .save-icon img, .inverted-icon {
-    -webkit-filter: invert(1);
-            filter: invert(1);
-  }
 }
 
 html,
@@ -2599,6 +2592,12 @@ input {
   .dark\:bg-indigo-800 {
     --tw-bg-opacity: 1;
     background-color: rgb(55 48 163 / var(--tw-bg-opacity));
+  }
+
+  .dark\:invert {
+    --tw-invert: invert(100%);
+    -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+            filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
   }
 
   .dark\:hover\:bg-indigo-900:hover {

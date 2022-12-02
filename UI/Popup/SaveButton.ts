@@ -9,7 +9,7 @@ import Svg from "../../Svg"
 export class EditButton extends Toggle {
     constructor(osmConnection: OsmConnection, onClick: () => void) {
         super(
-            new Combine([Svg.pencil_ui().SetClass("save-icon")])
+            new Combine([Svg.pencil_ui().SetClass("dark:invert")])
                 .SetClass("block relative h-10 w-10 p-2 float-right save-button")
                 .SetStyle("border-radius: 0.7em")
                 .onClick(onClick),

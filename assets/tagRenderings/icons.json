@@ -61,11 +61,11 @@
     ]
   },
   "phonelink": {
-    "render": "<a href='tel:{phone}'><img textmode='\uD83D\uDCDE' alt='phone' class='inverted-icon' src='./assets/tagRenderings/phone.svg'/></a>",
+    "render": "<a href='tel:{phone}'><img textmode='\uD83D\uDCDE' alt='phone' class='dark:invert'src='./assets/tagRenderings/phone.svg'/></a>",
     "condition": "phone~*"
   },
   "emaillink": {
-    "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' class='inverted-icon' src='./assets/tagRenderings/send_email.svg'/></a>",
+    "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' class='dark:invert'src='./assets/tagRenderings/send_email.svg'/></a>",
     "condition": "email~*"
   },
   "smokingicon": {

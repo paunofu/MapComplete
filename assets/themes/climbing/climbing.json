@@ -67,7 +67,7 @@
             "mappings": [
               {
                 "if": "__bolts_max~*",
-                "then": "<div class='flex' style='padding-right: 0.25rem;'><img class='inverted-icon' src='./assets/themes/climbing/carabiner.svg' style='width: 1rem;'/>{__bolts_max}</div>"
+                "then": "<div class='flex' style='padding-right: 0.25rem;'><img class='dark:invert'src='./assets/themes/climbing/carabiner.svg' style='width: 1rem;'/>{__bolts_max}</div>"
               },
               {
                 "if": "climbing:bolted=yes",
