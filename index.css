@@ -92,6 +92,9 @@
 
   /* Technical variable to make some dynamic behaviour possible; set by javascript. */
   --variable-title-height: 0px;
+
+  /* Secondary colour for the table */
+  --table-contrast-bg-color: #f2f2f2;
 }
 
 /* Dark mode colour scheme */
@@ -110,6 +113,7 @@
     --non-active-tab-svg: var(--foreground-color);
     --shadow-color: #00000066;
     --popup-border: #2d3748;
+    --table-contrast-bg-color: #2d3748;
   }
 }
 
@@ -643,7 +647,7 @@ input {
 }
 
 .zebra-table tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: var(--table-contrast-bg-color);
 }
 
 .layer-toggle {

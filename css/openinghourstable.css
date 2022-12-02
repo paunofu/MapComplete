@@ -199,3 +199,14 @@
     border-left: 1px solid #999;
     box-sizing: border-box
 }
+
+
+/* Some specific dark mode styling */
+@media (prefers-color-scheme: dark) {
+    .oh-table tr, .oh-table th {
+        background-color: #333;
+    }
+    .oh-timecell-full {
+        background-color: #222;
+    }
+}
