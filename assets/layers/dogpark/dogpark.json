@@ -72,7 +72,7 @@
         "mappings": [
           {
             "if": "name~*",
-            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+            "then": "<div class='bg-white dark:bg-black block p-1 rounded'>{name}</div>"
           }
         ]
       }

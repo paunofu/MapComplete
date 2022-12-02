@@ -231,11 +231,11 @@
                 "name~*"
               ]
             },
-            "then": "<div class='w-max p-1 rounded-xl' style='background: white;'>{name} <span class='climbing-{__difficulty:char}'>{climbing:grade:french}</span></div>"
+            "then": "<div class='w-max p-1 rounded-xl bg-white dark:bg-black'>{name} <span class='climbing-{__difficulty:char}'>{climbing:grade:french}</span></div>"
           },
           {
             "if": "name~*",
-            "then": "<div  class='w-max p-1 rounded-xl' style='background: white;'>{name}</div>"
+            "then": "<div  class='w-max p-1 rounded-xl bg-white dark:bg-black'>{name}</div>"
           }
         ]
       }

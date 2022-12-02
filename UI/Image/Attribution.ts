@@ -25,7 +25,7 @@ export default class Attribution extends VariableUiElement {
                 if (license?.title) {
                     title = Translations.W(license?.title).SetClass("block")
                     if (license.informationLocation) {
-                        title = new Link(title, license.informationLocation.href, true).SetClass("text-black dark:text-white")
+                        title = new Link(title, license.informationLocation.href, true).SetClass("text-black dark:text-black")
                     }
                 }
                 return new Combine([
@@ -35,7 +35,7 @@ export default class Attribution extends VariableUiElement {
 
                     new Combine([
                         title,
-                        Translations.W(license?.artist ?? "").SetClass("block font-bold"),
+                        Translations.W(license?.artist ?? "").SetClass("block font-bold dark:text-black"),
                         Translations.W(license?.license ?? license?.licenseShortName),
                         date === undefined
                             ? undefined

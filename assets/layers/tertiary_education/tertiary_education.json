@@ -171,7 +171,7 @@
         "mappings": [
           {
             "if": "name~*",
-            "then": "<div class='bg-white rounded-lg p-1'>{name}</div>"
+            "then": "<div class='bg-white dark:bg-black rounded-lg p-1'>{name}</div>"
           }
         ]
       },

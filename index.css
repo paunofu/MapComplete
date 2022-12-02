@@ -196,10 +196,6 @@ img {
   stroke: #d71010 !important;
 }
 
-a {
-  color: var(--foreground-color);
-}
-
 .btn {
   line-height: 1.25rem;
   --tw-text-opacity: 1;

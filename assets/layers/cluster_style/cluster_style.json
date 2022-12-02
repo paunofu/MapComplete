@@ -11,11 +11,11 @@
   "mapRendering": [
     {
       "label": {
-        "render": "<div class='rounded-full text-xl font-bold' style='width: 2rem; height: 2rem; background: white'>{showCount}</div>",
+        "render": "<div class='rounded-full text-xl font-bold bg-white dark:bg-black w-8 h-8'>{showCount}</div>",
         "mappings": [
           {
             "if": "showCount>1000",
-            "then": "<div class='rounded-full text-xl font-bold flex flex-col' style='width: 2.5rem; height: 2.5rem; background: white'>{kilocount}K</div>"
+            "then": "<div class='rounded-full text-xl font-bold flex flex-col bg-white dark:bg-black w-8 h-8'>{kilocount}K</div>"
           }
         ]
       },

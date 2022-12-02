@@ -110,7 +110,7 @@
       },
       "mapRendering": [
         {
-          "label": "<div class='text-xl bg-white rounded-full pl-2 pr-2 break-normal'>{postal_code}</div>",
+          "label": "<div class='text-xl bg-white dark:bg-black rounded-full pl-2 pr-2 break-normal'>{postal_code}</div>",
           "location": [
             "point",
             "centroid"

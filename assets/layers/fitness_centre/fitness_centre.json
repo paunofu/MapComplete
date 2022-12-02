@@ -82,7 +82,7 @@
       ],
       "icon": "circle:white;./assets/layers/fitness_centre/gym.svg",
       "iconSize": "40,40,center",
-      "label": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>",
+      "label": "<div class='bg-white dark:bg-black block p-1 rounded'>{name}</div>",
       "iconBadges": [
         {
           "if": "opening_hours~*",
