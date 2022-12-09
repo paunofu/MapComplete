@@ -60,7 +60,7 @@
         "mappings": [
           {
             "if": "ref~*",
-            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{ref}</div>"
+            "then": "<div class='bg-white dark:bg-black block p-1 rounded'>{ref}</div>"
           }
         ]
       }
