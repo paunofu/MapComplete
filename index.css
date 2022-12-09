@@ -95,6 +95,9 @@
 
   /* Secondary colour for the table */
   --table-contrast-bg-color: #f2f2f2;
+
+  /* Colour for non-working days in opening hours */
+  --opening-hours-non-working-day: rgba(230, 231, 235, 1);
 }
 
 /* Dark mode colour scheme */
@@ -114,6 +117,7 @@
     --shadow-color: #00000066;
     --popup-border: #2d3748;
     --table-contrast-bg-color: #2d3748;
+    --opening-hours-non-working-day: rgba(66, 70, 81, 1);
   }
 }
 

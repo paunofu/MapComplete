@@ -185,7 +185,7 @@ export default class OpeningHoursVisualization extends Toggle {
                 extraStyle = "background-color: var(--subtle-detail-color);"
                 allRanges.SetClass("ohviz-today")
             } else if (i >= 5) {
-                extraStyle = "background-color: rgba(230, 231, 235, 1);"
+                extraStyle = "background-color: var(--opening-hours-non-working-day);"
             }
             weekdays.push([day, allRanges])
             weekdayStyles.push([
