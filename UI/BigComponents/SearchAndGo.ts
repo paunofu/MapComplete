@@ -11,7 +11,7 @@ import Locale from "../i18n/Locale"
 
 export default class SearchAndGo extends Combine {
     constructor(state: { leafletMap: UIEventSource<any>; selectedElement?: UIEventSource<any> }) {
-        const goButton = Svg.search_ui().SetClass("w-8 h-8 full-rounded border-black float-right")
+        const goButton = Svg.search_ui().SetClass("w-8 h-8 full-rounded border-black float-right dark:invert")
 
         const placeholder = new UIEventSource<Translation>(Translations.t.general.search.search)
         const searchField = new TextField({
