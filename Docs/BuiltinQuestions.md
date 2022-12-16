@@ -31,7 +31,9 @@ The following items can be easily reused in your layers
     + [opening_hours_by_appointment](#opening_hours_by_appointment)
     + [service:electricity](#serviceelectricity)
     + [payment-options](#payment-options)
+    + [payment-options-split](#payment-options-split)
     + [payment-options-advanced](#payment-options-advanced)
+    + [denominations-coins](#denominations-coins)
     + [last_edit](#last_edit)
     + [all_tags](#all_tags)
     + [multilevels](#multilevels)
@@ -326,6 +328,24 @@ Which methods of payment are accepted here?
 
 
 
+### payment-options-split 
+
+
+
+Which methods of payment are accepted here?
+
+
+
+  - Cash is accepted here
+  - Payment cards are accepted here
+  - Coins are accepted here
+  - Bank notes are accepted here
+  - Debit cards are accepted here
+  - Credit cards are accepted here
+
+
+
+
 ### payment-options-advanced 
 
 
@@ -338,6 +358,26 @@ Which methods of payment are accepted here?
   - Payment cards are accepted here
   - Payment is done using a dedicated app
   - Payment is done using a membership card
+
+
+
+
+### denominations-coins 
+
+
+
+Whith what coins can you pay here?
+
+
+
+  - 1 cent coins are accepted
+  - 2 cent coins are accepted
+  - 5 cent coins are accepted
+  - 10 cent coins are accepted
+  - 20 cent coins are accepted
+  - 50 cent coins are accepted
+  - 1 euro coins are accepted
+  - 2 euro coins are accepted
 
 
 

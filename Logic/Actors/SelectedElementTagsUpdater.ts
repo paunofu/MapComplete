@@ -41,7 +41,7 @@ export default class SelectedElementTagsUpdater {
         osmConnection: OsmConnection
         layoutToUse: LayoutConfig
     }) {
-        state.selectedElement.addCallbackAndRunD((s) => {
+        state.selectedElement.addCallbackAndRunD(async (s) => {
             let id = s.properties?.id
 
             const backendUrl = state.osmConnection._oauth_config.url
@@ -58,9 +58,23 @@ export default class SelectedElementTagsUpdater {
                 // This is a new object
                 return
             }
-            OsmObject.DownloadPropertiesOf(id).then((latestTags) => {
+            try {
+                const latestTags = await OsmObject.DownloadPropertiesOf(id)
+                if (latestTags === "deleted") {
+                    console.warn("The current selected element has been deleted upstream!")
+                    const currentTagsSource = state.allElements.getEventSourceById(id)
+                    if (currentTagsSource.data["_deleted"] === "yes") {
+                        return
+                    }
+                    currentTagsSource.data["_deleted"] = "yes"
+                    currentTagsSource.ping()
+                    return
+                }
                 SelectedElementTagsUpdater.applyUpdate(state, latestTags, id)
-            })
+                console.log("Updated", id)
+            } catch (e) {
+                console.warn("Could not update", id, " due to", e)
+            }
         })
     }
 

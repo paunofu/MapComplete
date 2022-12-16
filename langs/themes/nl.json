@@ -76,6 +76,10 @@
         "shortDescription": "Een kaart met publieke verrekijker",
         "title": "Verrekijkers"
     },
+    "blind_osm": {
+        "description": "Help zaken die relevant zijn voor blinden in kaart te brengen",
+        "title": "OSM voor blinden"
+    },
     "bookcases": {
         "description": "Een boekenruilkast is een kastje waar iedereen een boek kan nemen of achterlaten. Op deze kaart kan je deze boekenruilkasten terugvinden en met een gratis OpenStreetMap-account, ook boekenruilkasten toevoegen of informatie verbeteren",
         "title": "Open boekenruilkasten-kaart"
@@ -154,7 +158,7 @@
                                 "then": "Hier wonen geen permanente gasten"
                             },
                             "2": {
-                                "then": "Hier kan je enkel verblijven met een langetermijnscontract (deze plaats zal verborgen worden van deze kaart als je dit kiest)"
+                                "then": "Hier kan je enkel verblijven met een langetermijnscontract (deze plaats verdwijnt van deze kaart als je dit kiest)"
                             }
                         },
                         "question": "Kan men hier plekken huren voor langere termijn?"
@@ -973,6 +977,7 @@
         "title": "Een kaart van kaarten"
     },
     "maxspeed": {
+        "description": "Deze kaart toont de maximum toegestane snelheid voor elke weg. Als er een maximumsnelheid mist of niet klopt, kan je hem hier aanpassen.",
         "shortDescription": "Deze kaart toont de maximumsnelheid voor elke straat.",
         "title": "Maximale snelheden"
     },
@@ -1064,6 +1069,11 @@
     "openwindpowermap": {
         "description": "Een kaart om windturbines te tonen en te bewerken.",
         "title": "Windmolens"
+    },
+    "osm_community_index": {
+        "description": "Een lijst van hulpmiddelen van gebruikers van OpenStreetMap. 'Hulpmiddelen' kunnen fora, meetups, Slack groepen, IRC kanalen, mailinglijsten, en meer zijn. Alles dat mappers, vooral beginners, nuttig of behulpzaam kunnen vinden.",
+        "shortDescription": "Een overzicht van hulpbronnen voor OpenStreetMap van de community.",
+        "title": "OSM Community Overzicht"
     },
     "parkings": {
         "description": "Deze kaart toont verschillende parkeerplekken",

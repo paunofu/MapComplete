@@ -19,6 +19,10 @@ import MoveConfig from "../../Models/ThemeConfig/MoveConfig"
 import { ElementStorage } from "../../Logic/ElementStorage"
 import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers"
 import BaseLayer from "../../Models/BaseLayer"
+import SearchAndGo from "../BigComponents/SearchAndGo"
+import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
+import { And } from "../../Logic/Tags/And"
+import { Tag } from "../../Logic/Tags/Tag"
 
 interface MoveReason {
     text: Translation | string
@@ -26,9 +30,11 @@ interface MoveReason {
     icon: BaseUIElement
     changesetCommentValue: string
     lockBounds: true | boolean
+    includeSearch: false | boolean
     background: undefined | "map" | "photo" | string | string[]
     startZoom: number
     minZoom: number
+    eraseAddressFields: false | boolean
 }
 
 export default class MoveWizard extends Toggle {
@@ -62,8 +68,10 @@ export default class MoveWizard extends Toggle {
                 changesetCommentValue: "relocated",
                 lockBounds: false,
                 background: undefined,
+                includeSearch: true,
                 startZoom: 12,
                 minZoom: 6,
+                eraseAddressFields: true,
             })
         }
         if (options.enableImproveAccuracy) {
@@ -73,9 +81,11 @@ export default class MoveWizard extends Toggle {
                 icon: Svg.crosshair_svg(),
                 changesetCommentValue: "improve_accuracy",
                 lockBounds: true,
+                includeSearch: false,
                 background: "photo",
                 startZoom: 17,
                 minZoom: 16,
+                eraseAddressFields: false,
             })
         }
 
@@ -141,6 +151,7 @@ export default class MoveWizard extends Toggle {
                 loc,
                 new UIEventSource(background)
             ).data
+
             const locationInput = new LocationInput({
                 minZoom: reason.minZoom,
                 centerLocation: loc,
@@ -152,12 +163,19 @@ export default class MoveWizard extends Toggle {
                 locationInput.installBounds(0.05, true)
             }
 
+            let searchPanel: BaseUIElement = undefined
+            if (reason.includeSearch) {
+                searchPanel = new SearchAndGo({
+                    leafletMap: locationInput.leafletMap,
+                })
+            }
+
             locationInput.SetStyle("height: 17.5rem")
 
             const confirmMove = new SubtleButton(Svg.move_confirm_svg(), t.confirmMove)
-            confirmMove.onClick(() => {
+            confirmMove.onClick(async () => {
                 const loc = locationInput.GetValue().data
-                state.changes.applyAction(
+                await state.changes.applyAction(
                     new ChangeLocationAction(featureToMove.properties.id, [loc.lon, loc.lat], {
                         reason: reason.changesetCommentValue,
                         theme: state.layoutToUse.id,
@@ -165,11 +183,32 @@ export default class MoveWizard extends Toggle {
                 )
                 featureToMove.properties._lat = loc.lat
                 featureToMove.properties._lon = loc.lon
+
+                if (reason.eraseAddressFields) {
+                    await state.changes.applyAction(
+                        new ChangeTagAction(
+                            featureToMove.properties.id,
+                            new And([
+                                new Tag("addr:housenumber", ""),
+                                new Tag("addr:street", ""),
+                                new Tag("addr:city", ""),
+                                new Tag("addr:postcode", ""),
+                            ]),
+                            featureToMove.properties,
+                            {
+                                changeType: "relocated",
+                                theme: state.layoutToUse.id,
+                            }
+                        )
+                    )
+                }
+
                 state.allElements.getEventSourceById(id).ping()
                 currentStep.setData("moved")
             })
             const zoomInFurhter = t.zoomInFurther.SetClass("alert block m-6")
             return new Combine([
+                searchPanel,
                 locationInput,
                 new Toggle(
                     confirmMove,
