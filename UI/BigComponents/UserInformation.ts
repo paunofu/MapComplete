@@ -64,7 +64,7 @@ class UserInformationMainPanel extends Combine {
                     let description: BaseUIElement = undefined
                     if (ud.description) {
                         const editButton = new Link(
-                            Svg.pencil_svg().SetClass("h-4 w-4"),
+                            Svg.pencil_svg().SetClass("h-4 w-4 dark:invert"),
                             "https://www.openstreetmap.org/profile/edit",
                             true
                         ).SetClass(
