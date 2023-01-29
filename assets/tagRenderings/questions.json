@@ -284,7 +284,7 @@
       "da": "Hvad er webstedet for {title()}?",
       "cs": "Jaká je webová stránka {title()}?"
     },
-    "render": "<a href='{website}' target='_blank'>{website}</a>",
+    "render": "<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>",
     "freeform": {
       "key": "website",
       "type": "url",
@@ -295,7 +295,7 @@
     "mappings": [
       {
         "if": "contact:website~*",
-        "then": "<a href='{contact:website}' target='_blank'>{contact:website}</a>",
+        "then": "<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>",
         "hideInAnswer": true
       }
     ]
@@ -675,7 +675,8 @@
             "nl": "24/7 open (ook tijdens feestdagen)",
             "fr": "Ouvert 24h/24 (jours fériés compris)",
             "nb_NO": "Døgnåpent (inkludert helligdager)",
-            "cs": "Otevřeno 24/7 (včetně svátků)"
+            "cs": "Otevřeno 24/7 (včetně svátků)",
+            "ca": "Obert 24/7 (incloent-hi festius)"
           }
         }
       ]
@@ -690,7 +691,11 @@
           "then": {
             "en": "Only by appointment",
             "de": "Nur nach Vereinbarung",
-            "nl": "Alleen op afspraak"
+            "nl": "Alleen op afspraak",
+            "fr": "Uniquement sur rendez-vous",
+            "ca": "Sols amb cita prèvia",
+            "es": "Sólo con cita previa",
+            "nb_NO": "Kun ved avtale"
           }
         },
         {
@@ -698,7 +703,11 @@
           "then": {
             "en": "Only by appointment",
             "de": "Nur nach Vereinbarung",
-            "nl": "Alleen op afspraak"
+            "nl": "Alleen op afspraak",
+            "fr": "Uniquement sur rendez-vous",
+            "ca": "Sols amb cita prèvia",
+            "es": "Sólo con cita previa",
+            "nb_NO": "Kun ved avtale"
           },
           "hideInAnswer": true
         }
@@ -752,7 +761,7 @@
           "en": "There are a few domestic sockets available to customers seated indoors, where they can charge their electronics",
           "nl": "Er zijn binnen enkele stekkers beschikbaar voor klanten die electronica wensen op te laden",
           "pt": "Há algumas tomadas elétricas disponíveis para clientes sentados no interior, onde estes podem carregar os seus dispositivos eletrónicos",
-          "ca": "Hi ha aslguns endolls disponibles per als clients de dins, on es poden carregar els aparells electrònics",
+          "ca": "Hi ha alguns endolls disponibles per als clients de dins, on es poden carregar els aparells electrònics",
           "de": "Im Innenraum stehen nur wenige Steckdosen zur Verfügung, an denen Kunden ihre Geräte laden können",
           "sv": "Det finns ett fåtal hushållsuttag tillgängliga för kunder som sitter inomhus, där de kan ladda sin elektronik",
           "zh_Hant": "這邊客戶座位有一些室內插座，可以為電器充電",
@@ -918,7 +927,13 @@
           "ifnot": "payment:coins=no",
           "icon": "./assets/tagRenderings/coins.svg",
           "then": {
-            "en": "Coins are accepted here"
+            "en": "Coins are accepted here",
+            "nl": "Muntgeld wordt hier aanvaard",
+            "de": "Münzen werden hier akzeptiert",
+            "fr": "Les pièces sont acceptées ici",
+            "ca": "Aquí s'accepten monedes",
+            "es": "Aquí se aceptan monedas",
+            "nb_NO": "Mynter aksepteres her"
           }
         },
         {
@@ -926,7 +941,13 @@
           "ifnot": "payment:notes=no",
           "icon": "./assets/tagRenderings/notes.svg",
           "then": {
-            "en": "Bank notes are accepted here"
+            "en": "Bank notes are accepted here",
+            "nl": "Bankbiljetten worden hier aanvaard",
+            "de": "Geldscheine werden hier akzeptiert",
+            "fr": "Les billets de banque sont acceptés ici",
+            "ca": "Aquí s'accepten bitllets",
+            "es": "Aquí se aceptan billetes",
+            "nb_NO": "Sedler aksepteres her"
           }
         },
         {
@@ -934,7 +955,13 @@
           "ifnot": "payment_debit_cards=no",
           "icon": "./assets/tagRenderings/payment_card.svg",
           "then": {
-            "en": "Debit cards are accepted here"
+            "en": "Debit cards are accepted here",
+            "nl": "Betalen met debetkaarten kan hier",
+            "de": "Debitkarten werden hier akzeptiert",
+            "fr": "Les cartes de débit sont acceptées ici",
+            "ca": "Aquí s'accepten targetes de dèbit",
+            "es": "Aquí se aceptan tarjetas de débito",
+            "nb_NO": "Debetkort aksepteres her"
           }
         },
         {
@@ -942,7 +969,13 @@
           "ifnot": "payment:credit_cards=no",
           "icon": "./assets/tagRenderings/payment_card.svg",
           "then": {
-            "en": "Credit cards are accepted here"
+            "en": "Credit cards are accepted here",
+            "nl": "Betalen met creditkaarten kan hier",
+            "de": "Kreditkarten werden hier akzeptiert",
+            "fr": "Les cartes de crédit sont acceptées ici",
+            "ca": "Aquí s'accepten targetes de crèdit",
+            "es": "Aquí se aceptan tarjetas de crédito",
+            "nb_NO": "Kredittkort aksepteres her"
           }
         }
       ]
@@ -1038,7 +1071,13 @@
       ]
     },
     "question": {
-      "en": "Whith what coins can you pay here?"
+      "en": "What coins can you use to pay here?",
+      "de": "Mit welchen Münzen kann man hier bezahlen?",
+      "nl": "Met welke munten kan je hier betalen?",
+      "fr": "Quelles pièces peut-on utiliser pour payer ici ?",
+      "pl": "Jakimi monetami można tutaj zapłacić?",
+      "ca": "Quines monedes es poden utilitzar per a pagar aquí?",
+      "es": "¿Qué monedas se pueden usar aquí para pagar?"
     },
     "multiAnswer": true,
     "mappings": [
@@ -1046,56 +1085,112 @@
         "if": "payment:coins:denominations=0.01 EUR",
         "icon": "./assets/tagRenderings/1cent.svg",
         "then": {
-          "en": "1 cent coins are accepted"
+          "en": "1 cent coins are accepted",
+          "de": "1-Cent-Münzen werden akzeptiert",
+          "nl": "Munten van 1 cent worden geaccepteerd",
+          "nb_NO": "1-cent mynter aksepteres",
+          "fr": "Les pièces d'1 cent sont acceptées",
+          "pl": "Akceptowane są monety 1 centowe",
+          "ca": "S'accepten monedes de 1 cèntim",
+          "es": "Se aceptan monedas de 1 céntimo"
         }
       },
       {
         "if": "payment:coins:denominations=0.02 EUR",
         "icon": "./assets/tagRenderings/2cent.svg",
         "then": {
-          "en": "2 cent coins are accepted"
+          "en": "2 cent coins are accepted",
+          "de": "2-Cent-Münzen werden akzeptiert",
+          "nl": "Munten van 2 cent worden geaccepteerd",
+          "nb_NO": "2-cent mynter aksepteres",
+          "fr": "Les pièces de 2 cents sont acceptées",
+          "pl": "Akceptowane są monety 2 centowe",
+          "ca": "S'accepten monedes de 2 cèntims",
+          "es": "Se aceptan monedas de 2 céntimos"
         }
       },
       {
         "if": "payment:coins:denominations=0.05 EUR",
         "icon": "./assets/tagRenderings/5cent.svg",
         "then": {
-          "en": "5 cent coins are accepted"
+          "en": "5 cent coins are accepted",
+          "de": "5-Cent-Münzen werden akzeptiert",
+          "nl": "Munten van 5 cent worden geaccepteerd",
+          "nb_NO": "5-cent mynter aksepteres",
+          "fr": "Les pièces de 5 cents sont acceptées",
+          "pl": "Akceptowane są monety 5 centowe",
+          "ca": "S'accepten monedes de 5 cèntims",
+          "es": "Se aceptan monedas de 5 céntimos"
         }
       },
       {
         "if": "payment:coins:denominations=0.10 EUR",
         "icon": "./assets/tagRenderings/10cent.svg",
         "then": {
-          "en": "10 cent coins are accepted"
+          "en": "10 cent coins are accepted",
+          "de": "10-Cent-Münzen werden akzeptiert",
+          "nl": "Munten van 10 cent worden geaccepteerd",
+          "nb_NO": "10-cent mynter aksepteres",
+          "fr": "Les pièces de 10 cents sont acceptées",
+          "pl": "Akceptowane są monety 10-centowe",
+          "ca": "S'accepten monedes de 10 cèntims",
+          "es": "Se aceptan monedas de 10 céntimos"
         }
       },
       {
         "if": "payment:coins:denominations=0.20 EUR",
         "icon": "./assets/tagRenderings/20cent.svg",
         "then": {
-          "en": "20 cent coins are accepted"
+          "en": "20 cent coins are accepted",
+          "de": "20-Cent-Münzen werden akzeptiert",
+          "nl": "Munten van 20 cent worden geaccepteerd",
+          "nb_NO": "20-cent mynter aksepteres",
+          "fr": "Les pièces de 20 cents sont acceptées",
+          "pl": "Akceptowane są monety 20-centowe",
+          "ca": "S'accepten monedes de 20 cèntims",
+          "es": "Se aceptan monedas de 20 céntimos"
         }
       },
       {
         "if": "payment:coins:denominations=0.50 EUR",
         "icon": "./assets/tagRenderings/50cent.svg",
         "then": {
-          "en": "50 cent coins are accepted"
+          "en": "50 cent coins are accepted",
+          "de": "50-Cent-Münzen werden akzeptiert",
+          "nl": "Munten van 50 cent worden geaccepteerd",
+          "nb_NO": "50-cent mynter aksepteres",
+          "fr": "Les pièces de 50 cents sont acceptées",
+          "pl": "Akceptowane są monety 50-centowe",
+          "ca": "S'accepten monedes de 50 cèntims",
+          "es": "Se aceptan monedas de 50 céntimos"
         }
       },
       {
         "if": "payment:coins:denominations=1 EUR",
         "icon": "./assets/tagRenderings/1euro.svg",
         "then": {
-          "en": "1 euro coins are accepted"
+          "en": "1 euro coins are accepted",
+          "de": "1-Euro-Münzen werden akzeptiert",
+          "nl": "Munten van 1 euro worden geaccepteerd",
+          "nb_NO": "1-euro mynter aksepteres",
+          "fr": "Les pièces de 1 euro sont acceptées",
+          "pl": "Akceptowane są monety 1 euro",
+          "ca": "S'accepten monedes de 1 euro",
+          "es": "Se aceptan monedas de 1 euro"
         }
       },
       {
         "if": "payment:coins:denominations=2 EUR",
         "icon": "./assets/tagRenderings/2euro.svg",
         "then": {
-          "en": "2 euro coins are accepted"
+          "en": "2 euro coins are accepted",
+          "de": "2-Euro-Münzen werden akzeptiert",
+          "nl": "Munten van 2 euro worden geaccepteerd",
+          "nb_NO": "2-euro mynter aksepteres",
+          "fr": "Les pièces de 2 euros sont acceptées",
+          "pl": "Akceptowane są monety 2 euro",
+          "ca": "S'accepten monedes de 2 euros",
+          "es": "Se aceptan monedas de 2 euros"
         }
       }
     ]
@@ -1122,7 +1217,8 @@
         "cs": "Do jakých podlaží tento výtah jezdí?",
         "nb_NO": "Hvilke etasjer går heisen til?",
         "nl": "Naar welke verdiepingen gaat deze lift?",
-        "es": "¿A qué pisos va este ascensor?"
+        "es": "¿A qué pisos va este ascensor?",
+        "ca": "A quins pisos va aquest ascensor?"
       },
       "render": {
         "en": "This elevator goes to floors {level}",
@@ -1134,7 +1230,8 @@
         "cs": "Tento výtah jede do {level} patra",
         "nb_NO": "Heisen går til etasje {level}",
         "nl": "Deze lift gaat naar de verdiepingen {level}",
-        "es": "Este ascensor va a los pisos {level}"
+        "es": "Este ascensor va a los pisos {level}",
+        "ca": "Aquest ascensor va als pisos {level}"
       },
       "freeform": {
         "key": "level",
@@ -1267,7 +1364,7 @@
           "hu": "A földszinten",
           "it": "Si trova al pianoterra",
           "nb_NO": "På gateplan",
-          "ca": "Situat a planta zero",
+          "ca": "Situat a la planta zero",
           "ja": "1階にあります",
           "id": "Terletak di lantai dasar",
           "sl": "Nahaja se v pritličju",
@@ -1337,7 +1434,8 @@
       "da": "Er det tilladt at ryge på {title()}?",
       "id": "Apa diizinkan untuk merokok di {title()}?",
       "nl": "Is roken toegestaan bij {title()}?",
-      "cs": "Je na {title()} povoleno kouřit?"
+      "cs": "Je na {title()} povoleno kouřit?",
+      "ca": "Està permés fumar a {title()}?"
     },
     "#condition": "Based on https://en.wikipedia.org/wiki/List_of_smoking_bans",
     "condition": "_country!~al|be",
@@ -1359,7 +1457,8 @@
           "id": "Merokok <b>diizinkan</b>",
           "nl": "Roken is <b>toegestaan</b>",
           "cs": "Kouření je <b>povoleno</b>",
-          "pa_PK": "سِگرٹ پیݨ دی ‫<b>‬؜اِجازت‬‫</b>‬ ؜اے"
+          "pa_PK": "سِگرٹ پیݨ دی ‫<b>‬؜اِجازت‬‫</b>‬ ؜اے",
+          "ca": "Està <b>permès</b> fumar"
         }
       },
       {
@@ -1378,7 +1477,8 @@
           "da": "Rygning er <b>ikke tilladt</b>",
           "id": "Merokok <b>dilarang</b>",
           "nl": "Roken is <b>niet toegestaan</b>",
-          "cs": "Kouření <b>není povoleno</b>"
+          "cs": "Kouření <b>není povoleno</b>",
+          "ca": "<b>No</b> està permés fumar"
         }
       },
       {
@@ -1393,7 +1493,8 @@
           "da": "Rygning er <b>tilladt udenfor</b>.",
           "id": "Merokok <b>diizinkan di luar ruangan</b>.",
           "nl": "Roken is <b>buiten toegestaan</b>.",
-          "cs": "Kouření je <b>povoleno venku</b>."
+          "cs": "Kouření je <b>povoleno venku</b>.",
+          "ca": "Està permés fumar <b>a l'exterior</b>."
         }
       }
     ]
@@ -1407,7 +1508,9 @@
       "da": "Har dette sted en lydinduktionssløjfe til personer med nedsat hørelse?",
       "cs": "Má toto místo zvukovou indukční smyčku pro osoby se sluchovým postižením?",
       "nb_NO": "Har stedet en teleslynge for folk med redusert hørsel?",
-      "nl": "Heeft deze plaats een ringleiding voor slechthorenden?"
+      "nl": "Heeft deze plaats een ringleiding voor slechthorenden?",
+      "ca": "Aquest lloc té un bucle magnètic per a la gent amb dificultats auditives?",
+      "es": "¿Este lugar tiene un bucle auditivo para personas con discapacidad auditiva?"
     },
     "mappings": [
       {
@@ -1419,7 +1522,10 @@
           "da": "Dette sted har en lydinduktionssløjfe",
           "cs": "Toto místo má zvukovou indukční smyčku",
           "nb_NO": "Dette stedet har en teleslynge",
-          "nl": "Deze plaats heeft een ringleiding"
+          "nl": "Deze plaats heeft een ringleiding",
+          "pl": "To miejsce ma pętlę indukcyjną audio",
+          "ca": "El lloc té un bucle magnètic",
+          "es": "Este lugar tiene un bucle auditivo"
         },
         "icon": {
           "path": "./assets/tagRenderings/audio_induction_loop.svg",
@@ -1435,7 +1541,9 @@
           "da": "Dette sted <b>har ikke</b> en lydinduktionssløjfe",
           "cs": "Toto místo <b>nemá indukční zvukovou smyčku</b>",
           "nb_NO": "Dette stedet <b>har ikke</b> en teleslynge",
-          "nl": "Deze plaats heeft <b>geen</b> ringleiding"
+          "nl": "Deze plaats heeft <b>geen</b> ringleiding",
+          "ca": "El lloc <b>no</b> té un bucle magnètic",
+          "es": "Este lugar <b>no</b> tiene bucle auditivo"
         },
         "icon": {
           "path": "./assets/tagRenderings/audio_induction_loop_missing.svg",
@@ -1454,7 +1562,9 @@
       "id": "Apa tempat ini menyediakan jaringan internet?",
       "cs": "Nabízí toto místo připojení k internetu?",
       "nb_NO": "Tilbyr dette stedet tilgang til Internett?",
-      "es": "¿Ofrece este lugar acceso a internet?"
+      "es": "¿Ofrece este lugar acceso a internet?",
+      "fr": "Cet endroit offre-t-il un accès à Internet ?",
+      "ca": "Aquest lloc ofereix accés a internet?"
     },
     "mappings": [
       {
@@ -1469,7 +1579,8 @@
           "id": "Tempat ini menyediakan jaringan internet nirkabel",
           "cs": "Toto místo nabízí bezdrátové připojení k internetu",
           "nb_NO": "Dette stedet tilbyr trådløs tilgang til Internett",
-          "es": "Este lugar ofrece acceso a internet inalámbrico"
+          "es": "Este lugar ofrece acceso a internet inalámbrico",
+          "ca": "Aquest lloc ofereix accés a internet inalàmbric"
         }
       },
       {
@@ -1484,7 +1595,8 @@
           "id": "Tempat ini <b>tidak</b> menyediakan jaringan internet",
           "cs": "Toto místo <b>neposkytuje</b> připojení k internetu",
           "nb_NO": "Dette stedet tilbyr <b>ikke</b> tilgang til Internett",
-          "es": "Este lugar <b>no</b> ofrece acceso a internet"
+          "es": "Este lugar <b>no</b> ofrece acceso a internet",
+          "ca": "Aquest lloc <b>no</b> ofereix accés a internet"
         }
       },
       {
@@ -1499,7 +1611,8 @@
           "id": "Tempat ini menyediakan jaringan internet",
           "cs": "Toto místo nabízí přístup k internetu",
           "nb_NO": "Dette stedet tilbyr tilgang til Internett",
-          "es": "Este lugar ofrece acceso a internet"
+          "es": "Este lugar ofrece acceso a internet",
+          "ca": "Aquest lloc ofereix accés a internet"
         },
         "hideInAnswer": true
       },
@@ -1514,7 +1627,9 @@
           "id": "Tempat ini menyediakan jaringan internet melalui terminal atau komputer",
           "cs": "Toto místo nabízí přístup k internetu prostřednictvím terminálu nebo počítače",
           "nb_NO": "Dette stedet tilbyr tilgang til Internett via en terminal eller datamaskin",
-          "es": "Este lugar ofrece acceso a internet a través de una terminal o un ordenador"
+          "es": "Este lugar ofrece acceso a internet a través de una terminal o un ordenador",
+          "fr": "Cet endroit offre un accès à Internet via un terminal ou un ordinateur",
+          "ca": "Aquest lloc ofereix accés a internet a través d'una terminal o ordinador"
         }
       },
       {
@@ -1528,7 +1643,9 @@
           "id": "Tempat ini menyediakan jaringan internet kabel",
           "cs": "Toto místo nabízí kabelové připojení k internetu",
           "nb_NO": "Dette stedet tilbyr trådbunden tilgang til Internett",
-          "es": "Este lugar ofrece acceso a internet por cable"
+          "es": "Este lugar ofrece acceso a internet por cable",
+          "fr": "Cet endroit offre un accès Internet filaire",
+          "ca": "Aquest lloc ofereix accés a internet per cable"
         }
       }
     ]
@@ -1548,7 +1665,10 @@
       "da": "Er der et gebyr for internetadgang?",
       "cs": "Je přístup na internet zpoplatněn?",
       "id": "Apakah ada biaya untuk akses internet?",
-      "nb_NO": "Er det et gebyr for bruk av Internett?"
+      "nb_NO": "Er det et gebyr for bruk av Internett?",
+      "fr": "L'accès à l'internet est-il payant ?",
+      "ca": "Hi ha que pagar per a accedir a internet?",
+      "es": "¿Hay que pagar para acceder a internet?"
     },
     "mappings": [
       {
@@ -1561,7 +1681,10 @@
           "da": "Der er et gebyr for internetadgang på dette sted",
           "cs": "Přístup na internet je zde zpoplatněn",
           "id": "Ada biaya untuk akses internet di tempat ini",
-          "nb_NO": "Det er et gebyr for tilgang til Internett på dette stedet"
+          "nb_NO": "Det er et gebyr for tilgang til Internett på dette stedet",
+          "fr": "L'accès à l'internet est payant à cet endroit",
+          "ca": "Aquí hi ha que pagar per a accedir a internet",
+          "es": "Hay que pagar para acceder a internet en este lugar"
         }
       },
       {
@@ -1575,7 +1698,9 @@
           "id": "Jaringan internet tersedia gratis di tempat ini",
           "cs": "Přístup k internetu je zde zdarma",
           "nb_NO": "Tilgang til Internett er gratis på dette stedet",
-          "es": "El acceso a internet es gratuito en este lugar"
+          "es": "El acceso a internet es gratuito en este lugar",
+          "fr": "L'accès à Internet est gratuit dans cet endroit",
+          "ca": "Aquí l'accés a internet és gratuït"
         }
       },
       {
@@ -1589,7 +1714,9 @@
           "id": "Jaringan internet tersedia gratis di tempat ini, hanya untuk pelanggan",
           "cs": "Přístup k internetu je na tomto místě zdarma, pouze pro zákazníky",
           "nb_NO": "Tilgang til Internett på dette stedet er gratis, men kun for kunder",
-          "es": "El acceso a internet es gratis en este lugar, solamente para clientes"
+          "es": "El acceso a internet es gratis en este lugar, solamente para clientes",
+          "fr": "L'accès à l'internet dans cet endroit est gratuit pour les clients uniquement",
+          "ca": "Aquí l'accés a internet és gratuït sols per als clients"
         }
       }
     ]
@@ -1605,7 +1732,9 @@
       "id": "Apa nama jaringan internet nirkabelnya?",
       "cs": "Jaký je název sítě pro bezdrátový přístup k internetu?",
       "nb_NO": "Hva er nettverksnavnet for det trådløse nettverket?",
-      "es": "¿Cuál es el nombre de red para el acceso inalámbrico a internet?"
+      "es": "¿Cuál es el nombre de red para el acceso inalámbrico a internet?",
+      "fr": "Quel est le nom du réseau pour l'accès Internet sans fil ?",
+      "ca": "Quin és el nom de la xarxa per a l'accés inalàmbric a internet?"
     },
     "freeform": {
       "key": "internet_access:ssid",
@@ -1620,7 +1749,9 @@
         "cs": "Zadejte název sítě",
         "nb_NO": "Skriv inn nettverksnavnet",
         "pa_PK": "نیٹورک دا ناں پایو",
-        "es": "Introduzca el nombre de red"
+        "es": "Introduzca el nombre de red",
+        "fr": "Entrez le nom du réseau",
+        "ca": "Intruduixca el nom de la xarxa"
       }
     },
     "mappings": [
@@ -1639,7 +1770,9 @@
       "id": "Nama jaringan ini adalah <b>{internet_access:ssid}</b>",
       "cs": "Název sítě je <b>{internet_access:ssid}</b>",
       "nb_NO": "Nettverksnavnet er <b>{internet_access:ssid}</b>",
-      "es": "El nombre de red es <b>{internet_access:ssid}</b>"
+      "es": "El nombre de red es <b>{internet_access:ssid}</b>",
+      "fr": "Le nom du réseau est <b>{internet_access:ssid}</b>",
+      "ca": "El nom de la xarxa és <b>{internet_access:ssid}</b>"
     }
   }
 }

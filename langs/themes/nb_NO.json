@@ -4,8 +4,39 @@
         "title": "Åpne AED-kart"
     },
     "artwork": {
-        "description": "Velkommen til det åpne kunstverkskartet, et kart over statuer, byster, grafitti, og andre kunstverk i verden",
+        "description": "Statuer, byster, graffiti, og andre kunstverk verden over",
         "title": "Kunstkort"
+    },
+    "atm": {
+        "description": "Viser minibanker for å ta ut eller sette inn penger",
+        "title": "Minibanker"
+    },
+    "bag": {
+        "layers": {
+            "2": {
+                "tagRenderings": {
+                    "Build year": {
+                        "mappings": {
+                            "0": {
+                                "then": "Oppføring startet <b>{_bag_obj:start_date}</b>"
+                            }
+                        },
+                        "render": "Bygning oppført <b>{_bag_obj:start_date}</b>"
+                    },
+                    "Building type": {
+                        "render": "Dette er en bygning av typen <b>{_bag_obj:building}</b>"
+                    },
+                    "Import button": {
+                        "mappings": {
+                            "0": {
+                                "then": "Har ikke regnet ut riktige verdier enda. Gjenoppfrisk siden."
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "title": "BAG-importhjelper"
     },
     "benches": {
         "description": "Viser alle benker som er registrert i OpenStreetMap: Individuelle benker, og benker som tilhører offentlig transport eller -skur. Med en OpenStreetMap-konto kan du kartlegge nye benker eller redigere eksisterende.",
@@ -25,6 +56,10 @@
         "description": "Stedsbundne kikkerter på påle. Vanligvis på turiststeder, utkikkspunkter, på toppen av utsiktstårn, og noen ganger i naturreservat.",
         "shortDescription": "Et kart over fastmonterte kikkerter",
         "title": "Kikkerter"
+    },
+    "blind_osm": {
+        "description": "Relevante funksjoner for blinde",
+        "title": "OSM for blinde"
     },
     "bookcases": {
         "title": "Kart over åpne bokhyller"
@@ -126,6 +161,7 @@
                         }
                     },
                     "dumpstations-charge": {
+                        "question": "Hvor mye koster det å bruke dette stedet?",
                         "render": "Dette stedet tar {charge}"
                     },
                     "dumpstations-fee": {
@@ -136,9 +172,29 @@
                             "1": {
                                 "then": "Kan brukes gratis"
                             }
-                        }
+                        },
+                        "question": "Krever dette stedet et gebyr?"
+                    },
+                    "dumpstations-grey-water": {
+                        "mappings": {
+                            "0": {
+                                "then": "Du kan kvitte deg med gråvann her"
+                            },
+                            "1": {
+                                "then": "Du kan ikke kvitte deg med gråvann her"
+                            }
+                        },
+                        "question": "Kan du kvitte deg med gråvann her?"
                     },
                     "dumpstations-waterpoint": {
+                        "mappings": {
+                            "0": {
+                                "then": "Dette stedet har en vannpost"
+                            },
+                            "1": {
+                                "then": "Dette stedet har ikke en vannpost"
+                            }
+                        },
                         "question": "Har dette stedet et vannkranssted?"
                     }
                 }
@@ -276,6 +332,13 @@
                         }
                     },
                     "question": "Er <b>{name}</b>-gaten en sykkelgate?"
+                },
+                "1": {
+                    "mappings": {
+                        "3": {
+                            "then": "Biler tillatt"
+                        }
+                    }
                 },
                 "2": {
                     "question": "Når vil denne gaten bli en sykkelgate?",
@@ -418,12 +481,111 @@
     "hailhydrant": {
         "title": "Hydranter, brannslukkere, brannstasjoner, og ambulansestasjoner."
     },
+    "healthcare": {
+        "title": "Helsebehandling"
+    },
     "hotels": {
         "description": "På dette kartet finner du hoteller der du er",
         "title": "Hoteller"
     },
     "indoors": {
+        "description": "Viser offentlig tilgjenglige innendørssteder",
         "title": "Innendørs"
+    },
+    "kerbs_and_crossings": {
+        "description": "Fortauskanter og fotgjengerfelt.",
+        "title": "Fortauskanter og fotgjengerfelt."
+    },
+    "mapcomplete-changes": {
+        "layers": {
+            "0": {
+                "description": "Viser alle MapComplete-endringer",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Temanavn inneholder {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Laget av bidragsyter {search}"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Ikke</b> laget av bidragsyter {search}"
+                            }
+                        }
+                    },
+                    "3": {
+                        "options": {
+                            "0": {
+                                "question": "Laget før {search}"
+                            }
+                        }
+                    },
+                    "4": {
+                        "options": {
+                            "0": {
+                                "question": "Laget etter {search}"
+                            }
+                        }
+                    },
+                    "5": {
+                        "options": {
+                            "0": {
+                                "question": "Brukerspråk (ISO-kode) {search}"
+                            }
+                        }
+                    },
+                    "6": {
+                        "options": {
+                            "0": {
+                                "question": "Laget med vert {search}"
+                            }
+                        }
+                    },
+                    "7": {
+                        "options": {
+                            "0": {
+                                "question": "Endringssett la til minst ett bilde"
+                            }
+                        }
+                    }
+                },
+                "tagRenderings": {
+                    "contributor": {
+                        "render": "Endring gjort av <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
+                    },
+                    "show_changeset_id": {
+                        "render": "Endringssett <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme-id": {
+                        "question": "Hvilket tema ble brukt for å utføre denne denne endringen?",
+                        "render": "Endre med temaet <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+                    }
+                },
+                "title": {
+                    "render": "Endringssett for {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings": {
+                        "link_to_more": {
+                            "render": "Mer statistikk å finne <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>her</a>"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Vis endringer laget med MapComplete",
+        "title": "Endringer laget med MapComplete"
     },
     "maps": {
         "title": "Et kart over kart"
@@ -441,14 +603,27 @@
     },
     "onwheels": {
         "layers": {
-            "18": {
+            "4": {
+                "override": {
+                    "filter": {
+                        "0": {
+                            "options": {
+                                "1": {
+                                    "question": "Uten breddeinfo"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "19": {
                 "override": {
                     "=title": {
                         "render": "Statistikk"
                     }
                 }
             },
-            "19": {
+            "20": {
                 "override": {
                     "+tagRenderings": {
                         "0": {
@@ -558,7 +733,28 @@
         },
         "title": "Fortau"
     },
+    "stations": {
+        "layers": {
+            "3": {
+                "description": "Lag som viser togstasjoner",
+                "name": "Togstasjoner"
+            },
+            "15": {
+                "tagRenderings": {
+                    "type": {
+                        "mappings": {
+                            "2": {
+                                "then": "Dette er en papir-tidstabell"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Togstasjoner"
+    },
     "street_lighting": {
+        "description": "Alt om gatebelysning",
         "layers": {
             "1": {
                 "name": "Belyste gater",
@@ -614,6 +810,7 @@
         "title": "Gatebelysning"
     },
     "surveillance": {
+        "description": "Her finner du overvåkningskameraer.",
         "shortDescription": "Overvåkningskameraer og andre typer overvåkning",
         "title": "Overvåkning under overvåkning"
     },
@@ -622,6 +819,7 @@
         "title": "Åpent toalettkart"
     },
     "transit": {
+        "description": "Planlegg turen din med offentlig transport",
         "title": "Bussruter"
     },
     "trees": {

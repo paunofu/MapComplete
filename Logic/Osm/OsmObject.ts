@@ -2,7 +2,7 @@ import { Utils } from "../../Utils"
 import * as polygon_features from "../../assets/polygon-features.json"
 import { Store, UIEventSource } from "../UIEventSource"
 import { BBox } from "../BBox"
-import * as OsmToGeoJson from "osmtogeojson"
+import OsmToGeoJson from "osmtogeojson"
 import { NodeId, OsmFeature, OsmId, OsmTags, RelationId, WayId } from "../../Models/OsmFeature"
 import { Feature, LineString, Polygon } from "geojson"
 
@@ -70,11 +70,10 @@ export abstract class OsmObject {
 
         const url = `${OsmObject.backendURL}api/0.6/${id}`
         const rawData = await Utils.downloadJsonCachedAdvanced(url, 1000)
-        console.log(rawData)
         if (rawData["error"] !== undefined && rawData["statuscode"] === 410) {
             return "deleted"
         }
-        return rawData["contents"].elements[0].tags
+        return rawData["content"].elements[0].tags
     }
 
     static async DownloadObjectAsync(
@@ -231,7 +230,7 @@ export abstract class OsmObject {
                     break
                 case "relation":
                     osmObject = new OsmRelation(idN)
-                    const allGeojsons = OsmToGeoJson.default(
+                    const allGeojsons = OsmToGeoJson(
                         { elements },
                         // @ts-ignore
                         {

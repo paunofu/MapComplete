@@ -7,6 +7,10 @@
         "description": "Eine freie Karte mit Statuen, Büsten, Graffitis und anderen Kunstwerken auf der ganzen Welt",
         "title": "Freie Kunstkarte"
     },
+    "atm": {
+        "description": "Diese Karte zeigt Geldautomaten zum Abheben oder Einzahlen von Geld",
+        "title": "Geldautomaten"
+    },
     "bag": {
         "description": "Dieses Thema hilft beim Importieren von BAG-Daten",
         "layers": {
@@ -85,7 +89,7 @@
         "title": "Karte öffentlicher Bücherschränke"
     },
     "cafes_and_pubs": {
-        "description": "Kneipen und Bars",
+        "description": "Cafés, Kneipen und Bars",
         "title": "Cafés und Kneipen"
     },
     "campersite": {
@@ -569,7 +573,7 @@
                 }
             }
         },
-        "shortDescription": "Was ist der Ursprung eines Ortsnamens?",
+        "shortDescription": "Woher stammt der Name einer Straße oder eines Ortes?",
         "title": "Karte zur Herkunft der Namen"
     },
     "facadegardens": {
@@ -675,7 +679,7 @@
         "title": "Pommes-frites-Läden"
     },
     "ghostbikes": {
-        "description": "<b>Geisterräder</b> sind weiße Fahrräder, die zum Gedenken tödlich verunglückter Radfahrer vor Ort aufgestellt wurden.<br/><br/> Auf dieser Karte sehen Sie alle Geisterräder, die in OpenStreetMap eingetragen sind. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen nur ein (kostenloses) OpenStreetMap-Konto.",
+        "description": "<b>Geisterräder</b> sind weiße Fahrräder, die zum Gedenken tödlich verunglückter Radfahrer vor Ort aufgestellt wurden.<br/><br/> Auf dieser Karte sehen Sie alle Geisterräder, die in OpenStreetMap eingetragen sind. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen nur ein (kostenloses) OpenStreetMap-Konto.<p>Es gibt ein Konto <a href='https://masto.bike/@ghostbikebot' target='_blank'>auf Mastodon, das monatliche eine weltweite Übersicht von Geisterfahrrädern veröffentlicht</a></p>",
         "title": "Geisterräder"
     },
     "grb": {
@@ -795,6 +799,13 @@
                                 "question": "Erstellt mit host {search}"
                             }
                         }
+                    },
+                    "7": {
+                        "options": {
+                            "0": {
+                                "question": "Im Änderungssatz wurde mindestens ein Bild hinzugefügt"
+                            }
+                        }
                     }
                 },
                 "name": "Zentrum der Änderungssätze",
@@ -856,7 +867,7 @@
         "title": "In die Natur"
     },
     "notes": {
-        "description": "Eine Notiz enthält eine Fehlerbeschreibung und ist als Stecknadel auf der Karte sichtbar.<br/><br/>In der <a href='#filters'>Ebenenauswahl</a> kann nach Ersteller, Bearbeiter und Text gesucht werden.",
+        "description": "Eine Notiz enthält eine Fehlerbeschreibung und ist als Markierung auf der Karte sichtbar.<br/><br/>In der <a href='#filters'>Ebenenauswahl</a> kann nach Ersteller, Bearbeiter und Inhalt gesucht werden.",
         "title": "Notizen von OpenStreetMap"
     },
     "observation_towers": {
@@ -905,14 +916,19 @@
                     }
                 }
             },
-            "18": {
+            "8": {
+                "override": {
+                    "name": "Barrierefreie Parkplätze"
+                }
+            },
+            "19": {
                 "override": {
                     "=title": {
                         "render": "Statistik"
                     }
                 }
             },
-            "19": {
+            "20": {
                 "override": {
                     "+tagRenderings": {
                         "0": {
@@ -1087,6 +1103,48 @@
         },
         "shortDescription": "Karte mit Sporteinrichtungen.",
         "title": "Sport"
+    },
+    "stations": {
+        "description": "Bahnhofsdetails ansehen, bearbeiten und hinzufügen",
+        "layers": {
+            "3": {
+                "description": "Ebene mit Bahnhöfen",
+                "name": "Bahnhöfe"
+            },
+            "15": {
+                "description": "Anzeigen der Züge, die von diesem Bahnhof abfahren",
+                "name": "Abfahrtstafeln",
+                "presets": {
+                    "0": {
+                        "description": "Fügen Sie eine Tafel hinzu, auf der Abfahrten angezeigt werden, entweder elektronisch oder in Papierform",
+                        "title": "eine Abfahrtstafel"
+                    }
+                },
+                "tagRenderings": {
+                    "type": {
+                        "mappings": {
+                            "0": {
+                                "then": "Dies ist eine Abfahrtstafel eines unbekannten Typs"
+                            },
+                            "1": {
+                                "then": "Dies ist eine elektronische Tafel, die nächste Abfahrten in Echtzeit anzeigt"
+                            },
+                            "2": {
+                                "then": "Dies ist ein Papierfahrplan"
+                            },
+                            "3": {
+                                "then": "Es gibt ein Schild, das den Takt der Züge anzeigt"
+                            }
+                        },
+                        "question": "Was ist das für eine Abfahrtstafel?"
+                    }
+                },
+                "title": {
+                    "render": "Abfahrtstafel"
+                }
+            }
+        },
+        "title": "Bahnhöfe"
     },
     "street_lighting": {
         "description": "Eine Karte für alles zum Thema Straßenbeleuchtung",

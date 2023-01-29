@@ -15,6 +15,7 @@
     "osmTags": "amenity=parking_space"
   },
   "tagRenderings": [
+    "images",
     {
       "id": "type",
       "question": {
@@ -28,7 +29,8 @@
           "then": {
             "en": "This is a normal parking space.",
             "de": "Dies ist ein normaler Stellplatz.",
-            "nl": "Dit is een normale parkeerplek."
+            "nl": "Dit is een normale parkeerplek.",
+            "ca": "És un lloc normal d'aparcament."
           },
           "hideInAnswer": true
         },
@@ -170,7 +172,17 @@
       "en": "Parking Space",
       "de": "Stellplatz",
       "nl": "Parkeerplek"
-    }
+    },
+    "mappings": [
+      {
+        "if": "parking_space=disabled",
+        "then": {
+          "en": "Disabled Parking Space",
+          "nl": "Parkeerplek voor gehandicapten",
+          "de": "Behindertenparkplatz"
+        }
+      }
+    ]
   },
   "mapRendering": [
     {

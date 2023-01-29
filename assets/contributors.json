@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 4735,
+      "commits": 4966,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 300,
+      "commits": 327,
       "contributor": "Robin van der Linde"
     },
     {
@@ -13,7 +13,7 @@
       "contributor": "Tobias"
     },
     {
-      "commits": 33,
+      "commits": 34,
       "contributor": "Win Olario"
     },
     {
@@ -38,11 +38,11 @@
     },
     {
       "commits": 24,
-      "contributor": "Ward"
+      "contributor": "riQQ"
     },
     {
-      "commits": 23,
-      "contributor": "riQQ"
+      "commits": 24,
+      "contributor": "Ward"
     },
     {
       "commits": 21,
@@ -70,6 +70,10 @@
     },
     {
       "commits": 17,
+      "contributor": "dependabot[bot]"
+    },
+    {
+      "commits": 17,
       "contributor": "pgm-chardelv1"
     },
     {
@@ -81,12 +85,12 @@
       "contributor": "ToastHawaii"
     },
     {
-      "commits": 14,
-      "contributor": "dependabot[bot]"
-    },
-    {
       "commits": 13,
       "contributor": "Nicole"
+    },
+    {
+      "commits": 12,
+      "contributor": "wjtje"
     },
     {
       "commits": 12,
@@ -102,11 +106,11 @@
     },
     {
       "commits": 9,
-      "contributor": "wjtje"
+      "contributor": "RobJN"
     },
     {
-      "commits": 9,
-      "contributor": "RobJN"
+      "commits": 8,
+      "contributor": "Thibault Molleman"
     },
     {
       "commits": 8,
@@ -127,10 +131,6 @@
     {
       "commits": 6,
       "contributor": "David Haberthür"
-    },
-    {
-      "commits": 6,
-      "contributor": "Thibault Molleman"
     },
     {
       "commits": 6,
@@ -211,6 +211,14 @@
     {
       "commits": 2,
       "contributor": "Stanislas Gueniffey"
+    },
+    {
+      "commits": 1,
+      "contributor": "ⵣⵓⵀⵉⵔ ⴰⵎⴰⵣⵉⵖ زهير أمازيغ"
+    },
+    {
+      "commits": 1,
+      "contributor": "flaburgan"
     },
     {
       "commits": 1,

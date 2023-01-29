@@ -5,11 +5,13 @@
     "de": "Ärzte",
     "nl": "Dokters",
     "fr": "Médecins",
-    "pa_PK": "ڈاکٹر"
+    "pa_PK": "ڈاکٹر",
+    "ca": "Metges"
   },
   "description": {
     "en": "This layer shows doctor offices",
-    "de": "Diese Ebene zeigt Arztpraxen, Zahnärzte und andere Gesundheitseinrichtungen"
+    "de": "Diese Ebene zeigt Arztpraxen, Zahnärzte und andere Gesundheitseinrichtungen",
+    "nl": "Deze laag toont dokterspraktijken"
   },
   "source": {
     "osmTags": "amenity=doctors"
@@ -30,7 +32,8 @@
         "en": "What is the name of this doctors place?",
         "de": "Wie heißt diese Arztpraxis?",
         "nl": "Wat is de naam van deze dokterspraktijk?",
-        "fr": "Comment s'appelle ce cabinet médical ?"
+        "fr": "Comment s'appelle ce cabinet médical ?",
+        "ca": "Com es diu aquesta consulta mèdica?"
       },
       "render": {
         "en": "This doctors place is called {name}",

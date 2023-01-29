@@ -7,6 +7,8 @@ import BaseLayer from "../../Models/BaseLayer"
 import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers"
 import BaseUIElement from "../BaseUIElement"
 import { GeoOperations } from "../../Logic/GeoOperations"
+import Hotkeys from "../Base/Hotkeys"
+import Translations from "../i18n/Translations"
 
 class SingleLayerSelectionButton extends Toggle {
     public readonly activate: () => void
@@ -48,13 +50,13 @@ class SingleLayerSelectionButton extends Toggle {
         let toggle: BaseUIElement = new Toggle(
             selected,
             unselected,
-            options.currentBackground.map((bg) => bg.category === options.preferredType)
+            options.currentBackground.map((bg) => bg?.category === options.preferredType)
         )
 
         super(
             toggle,
             undefined,
-            available.map((av) => av.category === options.preferredType)
+            available.map((av) => av?.category === options.preferredType)
         )
 
         /**
@@ -174,6 +176,7 @@ export default class BackgroundMapSwitch extends Combine {
         options?: {
             preferredCategory?: string
             allowedCategories?: ("osmbasedmap" | "photo" | "map")[]
+            enableHotkeys?: boolean
         }
     ) {
         const allowedCategories = options?.allowedCategories ?? ["osmbasedmap", "photo", "map"]
@@ -183,7 +186,7 @@ export default class BackgroundMapSwitch extends Combine {
         let activatePrevious: () => void = undefined
         for (const category of allowedCategories) {
             let preferredLayer = undefined
-            if (previousLayer.category === category) {
+            if (previousLayer?.category === category) {
                 preferredLayer = previousLayer
             }
 
@@ -197,6 +200,16 @@ export default class BackgroundMapSwitch extends Combine {
             activatePrevious = activatePrevious ?? button.activate
             if (category === options?.preferredCategory) {
                 button.activate()
+            }
+
+            if (options?.enableHotkeys) {
+                Hotkeys.RegisterHotkey(
+                    { nomod: category.charAt(0).toUpperCase() },
+                    Translations.t.hotkeyDocumentation.selectBackground.Subs({ category }),
+                    () => {
+                        button.activate()
+                    }
+                )
             }
             buttons.push(button)
         }

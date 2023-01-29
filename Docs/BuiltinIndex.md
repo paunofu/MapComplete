@@ -80,6 +80,7 @@
 
   - ambulancestation
   - artwork
+  - atm
   - barrier
   - bench
   - bench_at_pt
@@ -111,6 +112,7 @@
   - extinguisher
   - fire_station
   - fitness_centre
+  - fitness_station
   - food
   - ghost_bike
   - governments
@@ -126,6 +128,7 @@
   - observation_tower
   - parcel_lockers
   - parking
+  - parking_spaces
   - pharmacy
   - physiotherapist
   - picnic_table
@@ -154,7 +157,6 @@
   - viewpoint
   - village_green
   - waste_basket
-  - watermill
   - windturbine
 
 
@@ -364,7 +366,6 @@
   - observation_tower
   - shops
   - ticket_validator
-  - toilet
 
 
 
@@ -806,6 +807,7 @@
 
 
   - ticket_machine
+  - toilet
 
 
 

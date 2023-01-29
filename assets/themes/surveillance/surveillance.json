@@ -24,7 +24,8 @@
     "it": "Telecamere di sorveglianza e altri mezzi di sorveglianza.",
     "hu": "Térfigyelő kamerák és más figyelőeszközök",
     "da": "Overvågningskameraer og andre overvågningsmidler",
-    "nb_NO": "Overvåkningskameraer og andre typer overvåkning"
+    "nb_NO": "Overvåkningskameraer og andre typer overvåkning",
+    "ca": "Càmeres de vigilància i altres tipus de vigilància"
   },
   "description": {
     "en": "On this open map, you can find surveillance cameras.",
@@ -37,7 +38,8 @@
     "it": "In questa cartina puoi trovare le telecamera di sorveglianza.",
     "hu": "Ezen a térképen térfigyelő kamerák láthatók.",
     "ru": "На этой открытой карте можно найти камеры слежения.",
-    "da": "På dette åbne kort kan du finde overvågningskameraer."
+    "da": "På dette åbne kort kan du finde overvågningskameraer.",
+    "nb_NO": "Her finner du overvåkningskameraer."
   },
   "icon": "./assets/themes/surveillance/logo.svg",
   "startLat": 0,

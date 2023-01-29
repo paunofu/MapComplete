@@ -82,6 +82,9 @@
             }
         },
         "tagRenderings": {
+            "artwork-artist-wikidata": {
+                "question": "Qui a fait cette oeuvre d'art ?"
+            },
             "artwork-artist_name": {
                 "question": "Quel artiste a créé cette œuvre ?",
                 "render": "Créé par {artist_name}"
@@ -123,6 +126,9 @@
                     },
                     "11": {
                         "then": "Carrelage"
+                    },
+                    "12": {
+                        "then": "Sculpture sur bois"
                     }
                 },
                 "question": "Quel est le type de cette œuvre d'art ?",
@@ -131,6 +137,23 @@
             "artwork-website": {
                 "question": "Existe-t-il un site web où trouver plus d'informations sur cette œuvre d'art ?",
                 "render": "Plus d'info <a href='{website}' target='_blank'>sûr ce site web</a>"
+            },
+            "artwork_subject": {
+                "question": "Que représente cette oeuvre d'art ?"
+            },
+            "doubles_as_bench": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette oeuvre d'art sert aussi de banc"
+                    },
+                    "1": {
+                        "then": "Cette oeuvre d'art ne sert pas de banc"
+                    },
+                    "2": {
+                        "then": "Cette oeuvre d'art ne sert pas de banc"
+                    }
+                },
+                "question": "Cette oeuvre d'art sert-elle de banc ?"
             }
         },
         "title": {
@@ -140,6 +163,42 @@
                 }
             },
             "render": "Œuvre d'art"
+        }
+    },
+    "atm": {
+        "description": "DABs pour retirer de l'argent",
+        "name": "DABs",
+        "presets": {
+            "0": {
+                "title": "un DAB"
+            }
+        },
+        "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Nom de marque"
+                },
+                "question": "De quelle marque est ce DAB ?",
+                "render": "La marque de ce DAB est {brand}"
+            },
+            "name": {
+                "render": "Le nom de ce DAB est {name}"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Opérateur"
+                },
+                "question": "Quelle société exploite ce DAB ?",
+                "render": "Ce DAB est exploité par {operator}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "DAB {brand}"
+                }
+            },
+            "render": "DAB"
         }
     },
     "barrier": {
@@ -245,6 +304,28 @@
     },
     "bench": {
         "description": "Un banc est une surface en bois, métal, pierre… sur laquelle un humain peut s'asseoir. Cette couche permet de les visualiser et pose des questions à leur sujet.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "est un mémorial"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Avec et sans dossier"
+                    },
+                    "1": {
+                        "question": "A un dossier"
+                    },
+                    "2": {
+                        "question": "N'a pas de dossier"
+                    }
+                }
+            }
+        },
         "name": "Bancs",
         "presets": {
             "0": {
@@ -252,6 +333,16 @@
             }
         },
         "tagRenderings": {
+            "bench-artwork": {
+                "mappings": {
+                    "0": {
+                        "then": "Une oeuvre d'art est intégrée à ce banc"
+                    },
+                    "1": {
+                        "then": "Ce banc n'a pas d'oeuvre d'art intégrée"
+                    }
+                }
+            },
             "bench-backrest": {
                 "mappings": {
                     "0": {
@@ -297,35 +388,68 @@
                 "question": "Dans quelle direction regardez-vous quand vous êtes assis sur le banc ?",
                 "render": "Assis sur le banc, on regarde vers {direction}°."
             },
+            "bench-inscription": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce banc n'a pas d'inscription"
+                    },
+                    "1": {
+                        "then": "Ce banc n'a<span class='subtle'>(probablement)</span> pas d'inscription"
+                    }
+                },
+                "question": "Est-ce que ce banc possède une inscription ?<div class='subtle text-lg'>Par exemple, sur une plaque accrochée, sur le dossier, ...</div>",
+                "render": "Ce banc a l'inscription suivante :<br/><p><i>{inscription}</i></p>"
+            },
             "bench-material": {
                 "mappings": {
                     "0": {
-                        "then": "Matériau : bois"
+                        "then": "Matériau du siège : bois"
                     },
                     "1": {
-                        "then": "Matériau : métal"
+                        "then": "Matériau du siège : métal"
                     },
                     "2": {
                         "then": "Matériau : pierre"
                     },
                     "3": {
-                        "then": "Matériau : béton"
+                        "then": "Matériau du siège : béton"
                     },
                     "4": {
                         "then": "Matériau : plastique"
                     },
                     "5": {
-                        "then": "Matériau : acier"
+                        "then": "Matériau  du siège : acier"
                     }
                 },
                 "question": "De quel matériau ce banc est-il fait ?",
                 "render": "Matériau : {material}"
             },
+            "bench-memorial": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce banc est un mémorial pour quelqu'un ou quelque chose"
+                    },
+                    "1": {
+                        "then": "Ce banc n'est <b>pas</b> un mémorial pour quelqu'un ou quelque chose"
+                    }
+                },
+                "question": "Ce banc sert-il de mémorial pour quelqu'un ou quelque chose ?"
+            },
             "bench-seats": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce banc n'a pas de sièges séparés"
+                    }
+                },
                 "question": "De combien de places dispose ce banc ?",
                 "render": "{seats} places"
             },
             "bench-survey:date": {
+                "mappings": {
+                    "0": {
+                        "then": "Vérifié sur le terrain aujourd'hui !"
+                    }
+                },
                 "question": "Quand ce banc a-t-il été contrôlé pour la dernière fois ?",
                 "render": "Ce banc a été contrôlé pour la dernière fois le {survey:date}"
             }
@@ -335,6 +459,18 @@
         }
     },
     "bench_at_pt": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "Cette station de bus n'est plus utilisée"
+                }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Cette station de bus n'a pas de banc (il n'y en a jamais eu ou il a été retiré)"
+                }
+            }
+        },
         "description": "Une couche montrant tous les arrêts de transports publics qui ont un banc",
         "name": "Bancs des arrêts de transport en commun",
         "tagRenderings": {
@@ -637,9 +773,6 @@
                 "mappings": {
                     "0": {
                         "then": "Service de nettoyage gratuit"
-                    },
-                    "1": {
-                        "then": "Libre d'utilisation"
                     }
                 },
                 "question": "Combien cela coûte-t-il d'utiliser le service de nettoyage ?",
@@ -1286,6 +1419,33 @@
             "render": "Bar"
         }
     },
+    "car_rental": {
+        "description": "Lieu où vous pouvez louer une voiture",
+        "name": "Société de location de véhicules",
+        "presets": {
+            "0": {
+                "description": "Un lieu où vous pouvez louer une voiture",
+                "title": "Une société de location de véhicules"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Nom de la société de location de véhicules"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Cette société de location de véhicules n'a pas de nom"
+                    }
+                },
+                "question": "Quel est le nom de cette société de location de véhicules ?",
+                "render": "Cette société de location de véhicules est appelée {name}"
+            }
+        },
+        "title": {
+            "render": "Société de location de véhicules"
+        }
+    },
     "charging_station": {
         "description": "Une station de recharge",
         "filter": {
@@ -1316,6 +1476,9 @@
                     },
                     "1": {
                         "question": "Dispose d’une <div style='display: inline-block'><b><b>prise murale Schuko</b> sans terre (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
+                    },
+                    "6": {
+                        "question": "A un connecteur de   <div style='display: inline-block'><b>Type 1 <i>sans</i> câble (J1772) càd  Type 1 Combo </b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
                     }
                 }
             }
@@ -1357,6 +1520,10 @@
                     }
                 },
                 "question": "Doit-on payer des frais de stationnement pendant la recharge ?"
+            },
+            "phone": {
+                "question": "Quel numéro peut on appeler s'il y a un problème avec cette station de charge ?",
+                "render": "En cas de problèmes, appelez le <a href='tel:{phone}'>{phone}</a>"
             }
         }
     },
@@ -1382,6 +1549,18 @@
                     }
                 },
                 "question": "L’escalade de bloc est-elle possible ici ?"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Grimper ici est gratuit"
+                    },
+                    "1": {
+                        "then": "Il faut payer une taxe pour grimper ici"
+                    }
+                },
+                "question": "Est-ce que la grimpe sur ce site est payante ?",
+                "render": "Une taxe de {charge} doit être payée pour grimper ici"
             },
             "max_difficulty": {
                 "question": "Quel est le niveau de la voie la plus difficile selon la classification franco-belge ?",
@@ -1491,7 +1670,7 @@
         "presets": {
             "0": {
                 "description": "Un club d’escalade",
-                "title": "une club d’escalade"
+                "title": "un club d’escalade"
             },
             "1": {
                 "description": "Une association d’escalade",
@@ -1517,8 +1696,44 @@
         "description": "Une salle d’escalade",
         "name": "Salle d’escalade",
         "tagRenderings": {
+            "Speed climbing?": {
+                "mappings": {
+                    "0": {
+                        "then": "Il y a un mur d'escalade de vitesse"
+                    },
+                    "1": {
+                        "then": "Il n'y a pas de mur d'escalade de vitesse"
+                    },
+                    "2": {
+                        "then": "Il existe {climbing:speed} murs d'escalade de vitesse"
+                    }
+                },
+                "question": "Y a-t-il un mur d'escalade de vitesse ?"
+            },
+            "harness_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Un baudrier d'escalade peut être loué ici"
+                    },
+                    "1": {
+                        "then": "Un baudrier d'escalade ne peut <b>pas</b> être loué ici"
+                    }
+                },
+                "question": "Peut-on louer un baudrier d'escalade ici ?"
+            },
             "name": {
                 "question": "Quel est le nom de la salle d’escalade ?"
+            },
+            "shoe_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Les chaussures d'escalade peuvent être louées ici"
+                    },
+                    "1": {
+                        "then": "Les chaussures d'escalade ne peuvent <b>pas</b> être louées ici"
+                    }
+                },
+                "question": "Peut-on louer des chaussures d'escalade ici ?"
             }
         },
         "title": {
@@ -1556,6 +1771,7 @@
         }
     },
     "climbing_route": {
+        "description": "Une seule voie d'escalade et ses propriétés. Certaines propriétés sont dérivées des objets qui les contiennent",
         "name": "Voies d’escalade",
         "presets": {
             "0": {
@@ -1615,6 +1831,89 @@
                 "title": "une feu de signalisation"
             }
         },
+        "tagRenderings": {
+            "crossing-continue-through-red": {
+                "question": "Est-ce qu'un cycliste peut aller tout droit quand le feu est rouge ?"
+            },
+            "crossing-has-island": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce passage a une île au milieu"
+                    },
+                    "1": {
+                        "then": "Ce passage n'a pas d'île au milieu"
+                    }
+                },
+                "question": "Est-ce que ce passage a un refuge au milieu ?"
+            },
+            "crossing-is-zebra": {
+                "mappings": {
+                    "0": {
+                        "then": "C'est un passage piéton"
+                    },
+                    "1": {
+                        "then": "Ce n'est pas un passage piéton"
+                    }
+                },
+                "question": "Est-ce un passage piéton ?"
+            },
+            "crossing-right-turn-through-red": {
+                "mappings": {
+                    "0": {
+                        "then": "Un cycliste peut tourner à droite si le feu est rouge"
+                    },
+                    "1": {
+                        "then": "Un cycliste peut tourner à droite si le feu est rouge"
+                    },
+                    "2": {
+                        "then": "Un cycliste ne peut pas tourner à droite si le feu est rouge"
+                    }
+                },
+                "question": "Un cycliste peut-il tourner à droite quand le feu est rouge ?"
+            },
+            "crossing-sound": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce feu de signalisation a une alarme sonore pour aider à traverser, à la fois pour trouver le passage piéton, et pour traverser."
+                    },
+                    "1": {
+                        "then": "Ce feu de signalisation n'a pas de signal sonore pour aider à traverser."
+                    }
+                },
+                "question": "Est-ce que le feu de signalisation a une signalisation sonore pour aider à traverser ?"
+            },
+            "crossing-tactile": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce passage piéton a une surface podotactile"
+                    },
+                    "1": {
+                        "then": "Ce passage piéton n'a pas de surface podotactile"
+                    },
+                    "2": {
+                        "then": "Ce passage piéton a une surface podotactile, mais elle n'est pas adéquate"
+                    }
+                },
+                "question": "Est-ce que ce passage piéton a une surface podotactile ?"
+            },
+            "crossing-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Passage piéton, sans feux de signalisation"
+                    },
+                    "1": {
+                        "then": "Passage piéton avec des feux de signalisation"
+                    },
+                    "2": {
+                        "then": "Passage piéton"
+                    },
+                    "3": {
+                        "then": "Passage piéton sans marquages"
+                    }
+                },
+                "question": "Quel type de passage piéton est-ce ?"
+            }
+        },
         "title": {
             "mappings": {
                 "0": {
@@ -1657,10 +1956,10 @@
             "Cycleway:smoothness": {
                 "mappings": {
                     "0": {
-                        "then": "Utilisable pour les patins: patins à roulettes, skateboard"
+                        "then": "Utilisable pour les patins : patins à roulettes, skateboard"
                     },
                     "1": {
-                        "then": "Utilisable pour les roues fines: vélo de course"
+                        "then": "Utilisable pour les roues fines : vélo de course"
                     },
                     "2": {
                         "then": "Utilisable pour les roues traditionelles : vélo, chaise roulante, trotinettes"
@@ -1731,13 +2030,13 @@
             "Is this a cyclestreet? (For a road)": {
                 "mappings": {
                     "0": {
-                        "then": "Ceci est une route cyclable, et une zone à 30 km/h"
+                        "then": "Ceci est une rue cyclable, et une zone à 30 km/h"
                     },
                     "1": {
                         "then": "Ceci est une route cyclable"
                     },
                     "2": {
-                        "then": "Ceci n'est pas une route cyclable"
+                        "then": "Ceci n'est pas une rue cyclable"
                     }
                 },
                 "question": "Est-ce une route cyclable ?"
@@ -1811,7 +2110,7 @@
             "Surface of the street": {
                 "mappings": {
                     "0": {
-                        "then": "Utilisable pour les patins: patins à roulettes, skateboard"
+                        "then": "Utilisable pour les patins : patins à roulettes, skateboard"
                     },
                     "1": {
                         "then": "Utilisable pour les roues fines : vélo de course"
@@ -2576,21 +2875,21 @@
         },
         "description": "Un claque montrant les restaurants et les endroits de nourriture rapide (avec un rendu spécial pour les friteries)",
         "filter": {
-            "1": {
+            "2": {
                 "options": {
                     "0": {
                         "question": "A un menu végétarien"
                     }
                 }
             },
-            "2": {
+            "3": {
                 "options": {
                     "0": {
                         "question": "A un menu végétalien"
                     }
                 }
             },
-            "3": {
+            "4": {
                 "options": {
                     "0": {
                         "question": "A un menu halal"
@@ -3624,6 +3923,9 @@
             "render": "School <i>{name}</i>"
         }
     },
+    "selected_element": {
+        "description": "Met en surbrillance l'élément actuellement sélectioné. Surcharger cette couche pour avoir d'autres couleurs."
+    },
     "shops": {
         "deletion": {
             "extraDeleteReasons": {
@@ -4311,6 +4613,14 @@
             }
         },
         "tagRenderings": {
+            "circumference": {
+                "question": "Quelle est la circonférence du tronc ? <p class='subtle'>La mesure est effectuée à 1.30m de hauteur</p>",
+                "render": "Le tronc a une circonférence de {circumference} mètre(s)"
+            },
+            "height": {
+                "question": "Quelle est la hauteur de cette arbre ?",
+                "render": "Cet arbre a une hauteur de {height} mètre(s)"
+            },
             "tree-decidouous": {
                 "mappings": {
                     "0": {
@@ -4351,18 +4661,10 @@
                 },
                 "question": "Quelle est l'importance de cet arbre ? Choisissez la première réponse qui s'applique."
             },
-            "tree-height": {
-                "mappings": {
-                    "0": {
-                        "then": "Hauteur&nbsp;: {height}&nbsp;m"
-                    }
-                },
-                "render": "Hauteur : {height}"
-            },
             "tree-heritage": {
                 "mappings": {
                     "0": {
-                        "then": "Fait partie du patrimoine par <i>Onroerend Erfgoed</i>"
+                        "then": "Inscrit au registre du Patrimoine Immobilier (<i>Onroerend Erfgoed</i>) Flammand"
                     },
                     "1": {
                         "then": "Enregistré comme patrimoine par la <i>Direction du Patrimoine culturel</i> Bruxelles"
@@ -4419,7 +4721,19 @@
         }
     },
     "veterinary": {
-        "name": "vétérinaire"
+        "name": "vétérinaire",
+        "presets": {
+            "0": {
+                "description": "un vétérinaire, qui soigne les chiens",
+                "title": "un vétérinaire"
+            }
+        },
+        "tagRenderings": {
+            "vetName": {
+                "question": "Quel est le nom de ce vétérinaire ?",
+                "render": "Le nom de ce vétérinaire est {name}"
+            }
+        }
     },
     "viewpoint": {
         "description": "Un beau point de vue ou une belle vue. Idéal pour ajouter une image si aucune autre catégorie ne convient",
@@ -4466,8 +4780,13 @@
             }
         }
     },
-    "watermill": {
-        "name": "Moulin à eau"
+    "waste_basket": {
+        "description": "c'est une poubelle publique dans laquelle vous pouvez jeter vos mégots.",
+        "presets": {
+            "0": {
+                "title": "un poubelle"
+            }
+        }
     },
     "windturbine": {
         "name": "Éolienne",
@@ -4496,6 +4815,9 @@
             "turbine-start-date": {
                 "question": "Depuis quand l’éolienne est-elle en fonctionnement ?",
                 "render": "L’éolienne est active depuis {start_date}."
+            },
+            "windturbine-fixme": {
+                "render": "Informations supplémentaires pour les experts d'OpenStreetMap : {fixme}"
             }
         },
         "title": {

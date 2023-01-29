@@ -130,7 +130,7 @@
             },
             "artwork-website": {
                 "question": "Er der et websted med mere information om dette kunstværk?",
-                "render": "Yderligere oplysninger på <a href='{website}' target='_blank'>dette websted</a>"
+                "render": "Yderligere oplysninger på <a href='{website}' target='_blank'> dette websted</a>"
             }
         },
         "title": {
@@ -631,9 +631,6 @@
                 "mappings": {
                     "0": {
                         "then": "Gratis at bruge rengøringsservice"
-                    },
-                    "1": {
-                        "then": "Gratis at bruge"
                     }
                 },
                 "question": "Hvor meget koster det at bruge rengøringsservicen?",
@@ -2055,7 +2052,7 @@
     },
     "food": {
         "filter": {
-            "3": {
+            "4": {
                 "options": {
                     "0": {
                         "question": "Har en halalmenu"
@@ -2677,14 +2674,6 @@
                 },
                 "question": "Hvor vigtigt er dette træ? Vælg det første svar, der passer."
             },
-            "tree-height": {
-                "mappings": {
-                    "0": {
-                        "then": "Højde: {height}&nbsp;m"
-                    }
-                },
-                "render": "Højde: {height}"
-            },
             "tree-heritage": {
                 "mappings": {
                     "1": {
@@ -2966,9 +2955,6 @@
         "title": {
             "render": "Bortskaffelse af affald"
         }
-    },
-    "watermill": {
-        "name": "Vandmølle"
     },
     "windturbine": {
         "description": "Moderne vindmøller til produktion af elektricitet",

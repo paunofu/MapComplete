@@ -23,7 +23,7 @@
     "osmTags": "emergency=defibrillator"
   },
   "calculatedTags": [
-    "_days_since_last_survey=Math.floor(new Date() - new Date(feat.properties['survey:date'])/(1000*60*60*24))",
+    "_days_since_last_survey=Math.floor((new Date() - new Date(feat.properties['survey:date']))/(1000*60*60*24))",
     "_recently_surveyed=Number(feat.properties._days_since_last_survey) <= 90"
   ],
   "minzoom": 12,
@@ -44,8 +44,8 @@
     {
       "title": {
         "en": "a defibrillator",
-        "ca": "Desfibril·lador",
-        "es": "una desfibrilador",
+        "ca": "un desfibril·lador",
+        "es": "un desfibrilador",
         "fr": "une défibrillateur",
         "nl": "een defibrillator",
         "de": "einen Defibrillator",
@@ -216,7 +216,8 @@
             "it": "Non accessibile, potrebbe essere solo per uso professionale",
             "de": "Der Defibrillator ist nicht zugänglich, möglicherweise nur für betriebliche Nutzung",
             "sl": "Ni dostopen, morda samo za profesionalno rabo",
-            "es": "No accesible, posiblemente solo para el uso profesional"
+            "es": "No accesible, posiblemente solo para el uso profesional",
+            "ca": "No accessible, posiblemente només d'ús profesional"
           }
         }
       ],
@@ -296,7 +297,7 @@
     {
       "question": {
         "en": "On which floor is this defibrillator located?",
-        "ca": "A quina planta està el desfibril·lador localitzat?",
+        "ca": "A quina planta està el ubicat el desfibril·lador?",
         "es": "¿En qué planta se encuentra el defibrilador localizado?",
         "fr": "À quel étage est situé ce défibrillateur ?",
         "nl": "Op welke verdieping bevindt deze defibrillator zich?",
@@ -333,7 +334,8 @@
             "it": "Questo defibrillatore è al <b>pian terreno</b>",
             "de": "Der Defibrillator befindet sich im <b>Erdgeschoss</b>",
             "sl": "Ta defibrilator je v <b>pritličju</b>",
-            "es": "Este desfibrilador se encuentra en la <b>planta baja</b>"
+            "es": "Este desfibrilador se encuentra en la <b>planta baja</b>",
+            "ca": "Aquest desfribil·lador està a la <b>planta baixa</b>"
           }
         },
         {
@@ -345,7 +347,8 @@
             "it": "Questo defibrillatore è al <b>primo piano</b>",
             "de": "Der Defibrillator befindet sich in der <b>ersten Etage</b>",
             "sl": "Ta defibrilator je v <b>prvem nadstropju</b>",
-            "es": "Este desfibrilador se encuentra en la <b>primera planta</b>"
+            "es": "Este desfibrilador se encuentra en la <b>primera planta</b>",
+            "ca": "Aquest desfribil·lador està a la <b>primera planta</b>"
           }
         }
       ],
@@ -359,7 +362,8 @@
         "it": "<i>Informazioni supplementari circa la posizione (in lingua locale):</i><br/>{defibrillator:location}",
         "de": "<i>Zusätzliche Informationen über den Standort (in der Landessprache):</i><br/>{defibrillator:location}",
         "sl": "<i>Dodatne informacije o lokaciji (v lokalnem jeziku):</i><br/>{defibrillator:location}",
-        "es": "<i>Información a mayores sobre la localización (en el idioma local):</i><br/>{defibrillator:location}"
+        "es": "<i>Información a mayores sobre la localización (en el idioma local):</i><br/>{defibrillator:location}",
+        "ca": "<i>Informació extra sobre la localització (en la llengua local):</i><br/> {defibrillator:location}"
       },
       "question": {
         "en": "Please give some explanation on where the defibrillator can be found (in the local language)",

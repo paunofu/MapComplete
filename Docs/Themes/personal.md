@@ -1,7 +1,7 @@
 
 
- Personal theme ( personal) 
-----------------------------
+ Personal theme ( [personal](https://mapcomplete.osm.be/personal) ) 
+--------------------------------------------------------------------
 
 
 
@@ -14,6 +14,7 @@ This theme contains the following layers:
   - [ambulancestation](../Layers/ambulancestation.md)
   - [artwork](../Layers/artwork.md)
   - [atm](../Layers/atm.md)
+  - [bank](../Layers/bank.md)
   - [barrier](../Layers/barrier.md)
   - [bench](../Layers/bench.md)
   - [bench_at_pt](../Layers/bench_at_pt.md)

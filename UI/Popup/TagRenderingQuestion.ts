@@ -48,7 +48,7 @@ export default class TagRenderingQuestion extends Combine {
             afterSave?: () => void
             cancelButton?: BaseUIElement
             saveButtonConstr?: (src: Store<TagsFilter>) => BaseUIElement
-            bottomText?: (src: Store<TagsFilter>) => BaseUIElement
+            bottomText?: (src: Store<UploadableTag>) => BaseUIElement
         }
     ) {
         const applicableMappingsSrc = Stores.ListStabilized(
@@ -100,28 +100,28 @@ export default class TagRenderingQuestion extends Combine {
             })
         )
 
-        const save = () => {
-            const selection = TagUtils.FlattenMultiAnswer(
-                TagUtils.FlattenAnd(inputElement.GetValue().data, tags.data)
-            )
-            if (selection) {
-                ;(state?.changes)
-                    .applyAction(
-                        new ChangeTagAction(tags.data.id, selection, tags.data, {
-                            theme: state?.layoutToUse?.id ?? "unkown",
-                            changeType: "answer",
+        if (options.saveButtonConstr === undefined) {
+            const save = () => {
+                const selection = TagUtils.FlattenMultiAnswer(
+                    TagUtils.FlattenAnd(inputElement.GetValue().data, tags.data)
+                )
+                if (selection) {
+                    ;(state?.changes)
+                        .applyAction(
+                            new ChangeTagAction(tags.data.id, selection, tags.data, {
+                                theme: state?.layoutToUse?.id ?? "unkown",
+                                changeType: "answer",
+                            })
+                        )
+                        .then((_) => {
+                            console.log("Tagchanges applied")
                         })
-                    )
-                    .then((_) => {
-                        console.log("Tagchanges applied")
-                    })
-                if (options.afterSave) {
-                    options.afterSave()
+                    if (options.afterSave) {
+                        options.afterSave()
+                    }
                 }
             }
-        }
 
-        if (options.saveButtonConstr === undefined) {
             options.saveButtonConstr = (v) => new SaveButton(v, state?.osmConnection).onClick(save)
         }
 
@@ -140,21 +140,19 @@ export default class TagRenderingQuestion extends Combine {
         super([
             question,
             inputElement,
-            new Combine([
-                new VariableUiElement(
-                    feedback.map(
-                        (t) =>
-                            t
-                                ?.SetStyle("padding-left: 0.75rem; padding-right: 0.75rem")
-                                ?.SetClass("alert flex") ?? bottomTags
-                    )
-                ),
-                new Combine([new Combine([options.cancelButton]), saveButton]).SetClass(
-                    "flex justify-end flex-wrap-reverse"
-                ),
-            ]).SetClass("flex mt-2 justify-between"),
+            new VariableUiElement(
+                feedback.map(
+                    (t) =>
+                        t
+                            ?.SetStyle("padding-left: 0.75rem; padding-right: 0.75rem")
+                            ?.SetClass("alert flex") ?? bottomTags
+                )
+            ),
+            new Combine([options.cancelButton, saveButton]).SetClass(
+                "flex justify-end flex-wrap-reverse"
+            ),
             new Toggle(
-                Translations.t.general.testing.SetClass("alert"),
+                Translations.t.general.testing.SetClass("block alert"),
                 undefined,
                 state?.featureSwitchIsTesting
             ),

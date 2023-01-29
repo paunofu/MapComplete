@@ -1,5 +1,33 @@
 {
     "shared_questions": {
+        "denominations-coins": {
+            "mappings": {
+                "0": {
+                    "then": "1-cent mynter aksepteres"
+                },
+                "1": {
+                    "then": "2-cent mynter aksepteres"
+                },
+                "2": {
+                    "then": "5-cent mynter aksepteres"
+                },
+                "3": {
+                    "then": "10-cent mynter aksepteres"
+                },
+                "4": {
+                    "then": "20-cent mynter aksepteres"
+                },
+                "5": {
+                    "then": "50-cent mynter aksepteres"
+                },
+                "6": {
+                    "then": "1-euro mynter aksepteres"
+                },
+                "7": {
+                    "then": "2-euro mynter aksepteres"
+                }
+            }
+        },
         "description": {
             "question": "Er det noe mer som er relevant du ikke kunne opplyse om i tidligere svar? Legg det til her.<br/><span style='font-size: small'>Ikke gjenta fakta som allerede er nevnt</span>"
         },
@@ -115,6 +143,18 @@
                 }
             }
         },
+        "opening_hours_by_appointment": {
+            "override": {
+                "mappings": {
+                    "0": {
+                        "then": "Kun ved avtale"
+                    },
+                    "1": {
+                        "then": "Kun ved avtale"
+                    }
+                }
+            }
+        },
         "payment-options": {
             "mappings": {
                 "0": {
@@ -134,6 +174,24 @@
                     },
                     "1": {
                         "then": "Betaling utføres med et medlemskort"
+                    }
+                }
+            }
+        },
+        "payment-options-split": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Mynter aksepteres her"
+                    },
+                    "1": {
+                        "then": "Sedler aksepteres her"
+                    },
+                    "2": {
+                        "then": "Debetkort aksepteres her"
+                    },
+                    "3": {
+                        "then": "Kredittkort aksepteres her"
                     }
                 }
             }

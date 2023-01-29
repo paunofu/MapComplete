@@ -52,7 +52,7 @@
     },
     {
       "key": "shelter",
-      "description": "Layer 'Transit Stops' shows shelter=no with a fixed text, namely 'This stop does not have a shelter' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bus routes')",
+      "description": "Layer 'Transit Stops' shows shelter=no with a fixed text, namely 'This stop does <b>not</b> have a shelter' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bus routes')",
       "value": "no"
     },
     {
@@ -67,7 +67,7 @@
     },
     {
       "key": "bench",
-      "description": "Layer 'Transit Stops' shows bench=no with a fixed text, namely 'This stop does not have a bench' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bus routes')",
+      "description": "Layer 'Transit Stops' shows bench=no with a fixed text, namely 'This stop does <b>not</b> have a bench' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bus routes')",
       "value": "no"
     },
     {
@@ -82,7 +82,7 @@
     },
     {
       "key": "bin",
-      "description": "Layer 'Transit Stops' shows bin=no with a fixed text, namely 'This stop does not have a bin' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bus routes')",
+      "description": "Layer 'Transit Stops' shows bin=no with a fixed text, namely 'This stop does <b>not</b> have a bin' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bus routes')",
       "value": "no"
     },
     {
@@ -117,7 +117,7 @@
     },
     {
       "key": "tactile_paving",
-      "description": "Layer 'Transit Stops' shows tactile_paving=no with a fixed text, namely 'This stop does not have tactile paving' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bus routes')",
+      "description": "Layer 'Transit Stops' shows tactile_paving=no with a fixed text, namely 'This stop does <b>not</b> have tactile paving' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bus routes')",
       "value": "no"
     },
     {
@@ -127,7 +127,7 @@
     },
     {
       "key": "lit",
-      "description": "Layer 'Transit Stops' shows lit=no with a fixed text, namely 'This stop is not lit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bus routes')",
+      "description": "Layer 'Transit Stops' shows lit=no with a fixed text, namely 'This stop is <b>not</b> lit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bus routes')",
       "value": "no"
     },
     {
@@ -157,7 +157,7 @@
     },
     {
       "key": "departures_board",
-      "description": "Layer 'Transit Stops' shows departures_board=no with a fixed text, namely 'This stop does not have a departures board' (in the MapComplete.osm.be theme 'Bus routes')",
+      "description": "Layer 'Transit Stops' shows departures_board=no with a fixed text, namely 'This stop does <b>not</b> have a departures board' (in the MapComplete.osm.be theme 'Bus routes')",
       "value": "no"
     },
     {
@@ -285,12 +285,12 @@
     },
     {
       "key": "covered",
-      "description": "Layer 'Bike parking' shows covered=yes with a fixed text, namely 'This parking is covered (it has a roof)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bus routes')",
+      "description": "Layer 'Bike parking' shows covered=yes with a fixed text, namely 'This parking is covered (it has a roof)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bus routes') (This is only shown if bicycle_parking!=shed&location!=underground)",
       "value": "yes"
     },
     {
       "key": "covered",
-      "description": "Layer 'Bike parking' shows covered=no with a fixed text, namely 'This parking is not covered' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bus routes')",
+      "description": "Layer 'Bike parking' shows covered=no with a fixed text, namely 'This parking is not covered' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bus routes') (This is only shown if bicycle_parking!=shed&location!=underground)",
       "value": "no"
     },
     {
@@ -333,7 +333,7 @@
     },
     {
       "key": "capacity:cargo_bike",
-      "description": "Layer 'Bike parking' shows and asks freeform values for key 'capacity:cargo_bike' (in the MapComplete.osm.be theme 'Bus routes')"
+      "description": "Layer 'Bike parking' shows and asks freeform values for key 'capacity:cargo_bike' (in the MapComplete.osm.be theme 'Bus routes') (This is only shown if cargo_bike~^(designated|yes)$)"
     },
     {
       "key": "amenity",

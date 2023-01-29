@@ -436,26 +436,26 @@
                 "render": "È un parcheggio bici del tipo: {bicycle_parking}"
             },
             "Capacity": {
-                "question": "Quante biciclette entrano in questo parcheggio per bici (incluse le eventuali bici da trasporto)?",
+                "question": "Quante biciclette entrano in questo parcheggio per bici (incluse le eventuali bici cargo)?",
                 "render": "Posti per {capacity} bici"
             },
             "Cargo bike capacity?": {
-                "question": "Quante bici da trasporto entrano in questo parcheggio per bici?",
-                "render": "Questo parcheggio può contenere {capacity:cargo_bike} bici da trasporto"
+                "question": "Quante bici cargo entrano in questo parcheggio per bici?",
+                "render": "Questo parcheggio può contenere {capacity:cargo_bike} bici cargo"
             },
             "Cargo bike spaces?": {
                 "mappings": {
                     "0": {
-                        "then": "Questo parcheggio ha posto per bici da trasporto"
+                        "then": "Questo parcheggio ha posto per bici cargo"
                     },
                     "1": {
-                        "then": "Questo parcheggio ha posti destinati (ufficialmente) alle bici da trasporto."
+                        "then": "Questo parcheggio ha posti destinati (ufficialmente) alle bici cargo."
                     },
                     "2": {
-                        "then": "Il parcheggio delle bici da trasporto è proibito"
+                        "then": "Il parcheggio delle bici cargo è proibito"
                     }
                 },
-                "question": "Questo parcheggio dispone di posti specifici per le bici da trasporto?"
+                "question": "Questo parcheggio dispone di posti specifici per le bici cargo?"
             },
             "Is covered?": {
                 "mappings": {
@@ -1766,37 +1766,37 @@
                     "6": {
                         "question": "Riciclo di olio da motore"
                     },
-                    "7": {
+                    "8": {
                         "question": "Riciclo di umido"
                     },
-                    "8": {
+                    "9": {
                         "question": "Riciclo di bottiglie di vetro"
                     },
-                    "9": {
+                    "10": {
                         "question": "Riciclo di vetro"
                     },
-                    "10": {
+                    "12": {
                         "question": "Riciclo di giornali"
                     },
-                    "11": {
+                    "13": {
                         "question": "Riciclo di carta"
                     },
-                    "12": {
+                    "14": {
                         "question": "Riciclo di bottiglie di plastica"
                     },
-                    "13": {
+                    "15": {
                         "question": "Riciclo di confezioni di plastica"
                     },
-                    "14": {
+                    "16": {
                         "question": "Riciclo di plastica"
                     },
-                    "15": {
+                    "17": {
                         "question": "Riciclo di rottami metallici"
                     },
-                    "16": {
+                    "18": {
                         "question": "Riciclo di piccoli elettrodomestici"
                     },
-                    "17": {
+                    "19": {
                         "question": "Riciclo di secco"
                     }
                 }
@@ -1855,49 +1855,49 @@
                     "5": {
                         "then": "Olio di motore"
                     },
-                    "6": {
+                    "7": {
                         "then": "Verde"
                     },
-                    "7": {
+                    "8": {
                         "then": "Umido"
                     },
-                    "8": {
+                    "9": {
                         "then": "Bottiglie di vetro"
                     },
-                    "9": {
+                    "10": {
                         "then": "Vetro"
                     },
-                    "10": {
+                    "12": {
                         "then": "Giornali"
                     },
-                    "11": {
+                    "13": {
                         "then": "Carta"
                     },
-                    "12": {
+                    "14": {
                         "then": "Bottiglie di platica"
                     },
-                    "13": {
+                    "15": {
                         "then": "Confezioni di plastica"
                     },
-                    "14": {
+                    "16": {
                         "then": "Plastica"
                     },
-                    "15": {
+                    "17": {
                         "then": "Rottami metallici"
                     },
-                    "16": {
+                    "18": {
                         "then": "Scarpe"
                     },
-                    "17": {
-                        "then": "Piccoli elettrodomestici"
-                    },
-                    "18": {
-                        "then": "Piccoli elettrodomestici"
-                    },
                     "19": {
-                        "then": "Aghi e oggetti appuntiti"
+                        "then": "Piccoli elettrodomestici"
                     },
                     "20": {
+                        "then": "Piccoli elettrodomestici"
+                    },
+                    "21": {
+                        "then": "Aghi e oggetti appuntiti"
+                    },
+                    "22": {
                         "then": "Secco"
                     }
                 },
@@ -2411,14 +2411,6 @@
                 },
                 "question": "Quanto significativo è questo albero? Scegli la prima risposta che corrisponde."
             },
-            "tree-height": {
-                "mappings": {
-                    "0": {
-                        "then": "Altezza: {height}&nbsp;m"
-                    }
-                },
-                "render": "Altezza: {height}"
-            },
             "tree-heritage": {
                 "mappings": {
                     "0": {
@@ -2671,6 +2663,9 @@
             "turbine-start-date": {
                 "question": "Quando è entrata in funzione questa pala eolica?",
                 "render": "Questa pala eolica è entrata in funzione in data {start_date}."
+            },
+            "windturbine-fixme": {
+                "render": "Informazioni supplementari per gli esperti di OpenStreetMap: {fixme}"
             }
         },
         "title": {

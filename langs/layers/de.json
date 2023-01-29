@@ -142,6 +142,20 @@
             "artwork_subject": {
                 "question": "Was zeigt dieses Kunstwerk?",
                 "render": "Das Kunstwerk zeigt {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
+            },
+            "doubles_as_bench": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieses Kunstwerk dient auch als Sitzbank"
+                    },
+                    "1": {
+                        "then": "Dieses Kunstwerk dient nicht als Sitzbank"
+                    },
+                    "2": {
+                        "then": "Dieses Kunstwerk dient nicht als Sitzbank"
+                    }
+                },
+                "question": "Dient dieses Kunstwerk auch als Sitzbank?"
             }
         },
         "title": {
@@ -151,6 +165,128 @@
                 }
             },
             "render": "Kunstwerk"
+        }
+    },
+    "atm": {
+        "description": "Geldautomaten zum Geld abheben",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Mit Sprachausgabe"
+                    }
+                }
+            }
+        },
+        "name": "Geldautomaten",
+        "presets": {
+            "0": {
+                "title": "einen Geldautomaten"
+            }
+        },
+        "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Markenname"
+                },
+                "question": "Von welcher Marke ist dieser Geldautomat?",
+                "render": "Die Marke des Geldautomaten ist {brand}"
+            },
+            "cash_in": {
+                "mappings": {
+                    "0": {
+                        "then": "Sie können wahrscheinlich kein Bargeld in diesen Geldautomaten einzahlen"
+                    },
+                    "1": {
+                        "then": "Sie können Bargeld in diesen Geldautomaten einzahlen"
+                    },
+                    "2": {
+                        "then": "Sie können an diesem Geldautomaten kein Bargeld einzahlen"
+                    }
+                },
+                "question": "Kann man an diesem Geldautomaten Bargeld einzahlen?"
+            },
+            "cash_out": {
+                "mappings": {
+                    "0": {
+                        "then": "Sie können an diesem Geldautomaten Bargeld abheben"
+                    },
+                    "1": {
+                        "then": "An diesem Geldautomaten können Sie Bargeld abheben"
+                    },
+                    "2": {
+                        "then": "Sie können an diesem Geldautomaten kein Bargeld abheben"
+                    }
+                },
+                "question": "Kann man an diesem Geldautomaten Bargeld abheben?"
+            },
+            "name": {
+                "render": "Der Name des Geldautomaten ist {name}"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Betreiber"
+                },
+                "question": "Welches Unternehmen betreibt den Geldautomaten?",
+                "render": "Der Geldautomat wird betrieben von {operator}"
+            },
+            "speech_output": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Geldautomat verfügt über eine Sprachausgabe, die normalerweise über eine Kopfhörerbuchse verfügbar ist"
+                    },
+                    "1": {
+                        "then": "Dieser Geldautomat hat keine Sprachausgabe"
+                    }
+                },
+                "question": "Verfügt dieser Geldautomat über eine Sprachausgabe für sehbehinderte Benutzer?"
+            },
+            "speech_output_language": {
+                "render": {
+                    "special": {
+                        "question": "In welchen Sprachen hat dieser Geldautomat eine Sprachausgabe?",
+                        "render_list_item": "Dieser Geldautomat hat eine Sprachausgabe in {language():font-bold}",
+                        "render_single_language": "Dieser Geldautomat hat eine Sprachausgabe in {language():font-bold}"
+                    }
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{brand}-Geldautomat"
+                }
+            },
+            "render": "Geldautomat"
+        }
+    },
+    "bank": {
+        "description": "Ein Finanzinstitut, um Geld einzuzahlen",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Mit einem Geldautomaten"
+                    }
+                }
+            }
+        },
+        "name": "Banken",
+        "tagRenderings": {
+            "has_atm": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Bank hat einen Geldautomaten"
+                    },
+                    "1": {
+                        "then": "Diese Bank hat <b>keinen</b> Geldautomaten"
+                    },
+                    "2": {
+                        "then": "Diese Bank hat zwar einen Geldautomaten, aber dieser ist mit einem anderen Symbol dargestellt"
+                    }
+                },
+                "question": "Hat diese Bank einen Geldautomaten?"
+            }
         }
     },
     "barrier": {
@@ -256,6 +392,28 @@
     },
     "bench": {
         "description": "Diese Karte stellt Sitzbänke aus Holz, Metall, Stein, … dar und stellt ein paar Fragen, um weitere Informationen zu ergänzen.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "ist ein Denkmal"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Mit und ohne Rückenlehne"
+                    },
+                    "1": {
+                        "question": "Hat eine Rückenlehne"
+                    },
+                    "2": {
+                        "question": "Hat keine Rückenlehne"
+                    }
+                }
+            }
+        },
         "name": "Sitzbänke",
         "presets": {
             "0": {
@@ -263,6 +421,17 @@
             }
         },
         "tagRenderings": {
+            "bench-artwork": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Bank hat ein integriertes Kunstwerk"
+                    },
+                    "1": {
+                        "then": "Diese Bank hat kein integriertes Kunstwerk"
+                    }
+                },
+                "question": "Hat diese Bank ein künstlerisches Element? <div class='subtle text-lg'>Z.B. hat es ein integriertes Gemälde, eine Statue oder eine andere nicht triviale, kreative Arbeit</div>"
+            },
             "bench-backrest": {
                 "mappings": {
                     "0": {
@@ -308,6 +477,18 @@
                 "question": "In welche Richtung schaut man, wenn man auf der Bank sitzt?",
                 "render": "Wenn man auf der Bank sitzt, schaut man in Richtung {direction}°."
             },
+            "bench-inscription": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Bank hat keine Inschrift"
+                    },
+                    "1": {
+                        "then": "Diese Bank hat <span class='subtle'>(wahrscheinlich)</span> keine Inschrift"
+                    }
+                },
+                "question": "Hat diese Bank eine Inschrift? <div class='subtle text-lg'>Z.B. auf einer angebrachten Plakette, in der Rückenlehne, ... </div>",
+                "render": "Diese Bank hat folgende Inschrift:<br/><p><i>{inscription}</i></p>"
+            },
             "bench-material": {
                 "mappings": {
                     "0": {
@@ -332,11 +513,32 @@
                 "question": "Aus welchem Material ist die Sitzfläche der Bank?",
                 "render": "Material: {material}"
             },
+            "bench-memorial": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Bank ist ein Denkmal für jemanden oder etwas"
+                    },
+                    "1": {
+                        "then": "Diese Bank ist <b>kein</b> Denkmal für jemanden oder etwas"
+                    }
+                },
+                "question": "Dient diese Bank als Denkmal für jemanden oder etwas?"
+            },
             "bench-seats": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Bank hat keine getrennten Sitze"
+                    }
+                },
                 "question": "Wie viele Sitzplätze hat diese Bank?",
                 "render": "Die Sitzbank hat {seats} Sitzplätze"
             },
             "bench-survey:date": {
+                "mappings": {
+                    "0": {
+                        "then": "Heute geprüft!"
+                    }
+                },
                 "question": "Wann wurde diese Bank zuletzt überprüft?",
                 "render": "Diese Bank wurde zuletzt überprüft am {survey:date}"
             }
@@ -346,6 +548,18 @@
         }
     },
     "bench_at_pt": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "Diese Bushaltestelle wird nicht mehr genutzt"
+                }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Diese Bushaltestelle hat keine Bank (es gab nie eine oder sie wurde entfernt)"
+                }
+            }
+        },
         "description": "Eine Ebene mit allen Haltestellen des öffentlichen Nahverkehrs, die über eine Sitzbank verfügen",
         "name": "Sitzbänke an Haltestellen",
         "tagRenderings": {
@@ -452,31 +666,31 @@
             "bicycle-types": {
                 "mappings": {
                     "0": {
-                        "then": "Normale Stadtfahrräder können hier gemietet werden"
+                        "then": "Normale Stadtfahrräder können geliehen werden"
                     },
                     "1": {
-                        "then": "Elektrofahrräder können hier gemietet werden"
+                        "then": "Elektrofahrräder können geliehen werden"
                     },
                     "2": {
-                        "then": "BMX-Räder können hier gemietet werden"
+                        "then": "BMX-Räder können geliehen werden"
                     },
                     "3": {
-                        "then": "Mountainbikes können hier gemietet werden"
+                        "then": "Mountainbikes können geliehen werden"
                     },
                     "4": {
-                        "then": "Kinderfahrräder können hier gemietet werden"
+                        "then": "Kinderfahrräder können geliehen werden"
                     },
                     "5": {
-                        "then": "Tandems können hier gemietet werden"
+                        "then": "Tandems können geliehen werden"
                     },
                     "6": {
-                        "then": "Rennräder können hier gemietet werden"
+                        "then": "Rennräder können geliehen werden"
                     },
                     "7": {
-                        "then": "Fahrradhelme können hier gemietet werden"
+                        "then": "Fahrradhelme können geliehen werden"
                     }
                 },
-                "question": "Welche Art von Fahrrädern und Zubehör wird hier vermietet?",
+                "question": "Welche Fahrräder und welches Zubehör kann hier geliehen werden?",
                 "render": "{rental} können hier gemietet werden"
             },
             "bicycle_rental_type": {
@@ -647,10 +861,10 @@
             "bike_cleaning-charge": {
                 "mappings": {
                     "0": {
-                        "then": "Kostenloser Reinigungsservice"
+                        "then": "Der Reinigungsservice ist kostenlos"
                     },
                     "1": {
-                        "then": "Kostenlose Nutzung"
+                        "then": "Dieser Reinigungsservice ist kostenpflichtig"
                     }
                 },
                 "question": "Wie viel kostet die Nutzung des Reinigungsdienstes?",
@@ -666,7 +880,7 @@
                     }
                 },
                 "question": "Wie viel kostet die Nutzung des Reinigungsdienstes?",
-                "render": "Nutzung des Reinigungsservice kostet {service:bicycle:cleaning:charge}"
+                "render": "Der Reinigungsservice kostet {service:bicycle:cleaning:charge}"
             }
         },
         "title": {
@@ -839,13 +1053,13 @@
             "bike_repair_station-available-services": {
                 "mappings": {
                     "0": {
-                        "then": "Es ist nur eine Pumpe vorhanden"
+                        "then": "Nur eine Pumpe ist vorhanden"
                     },
                     "1": {
-                        "then": "Es ist nur Werkzeug (Schraubenzieher, Zangen, …) vorhanden"
+                        "then": "Nur Werkzeug (Schraubenzieher, Zangen, …) ist vorhanden"
                     },
                     "2": {
-                        "then": "Es sind sowohl Werkzeuge als auch eine Pumpe vorhanden"
+                        "then": "Werkzeug und Pumpe sind vorhanden"
                     }
                 },
                 "question": "Welche Geräte sind hier vorhanden?"
@@ -902,7 +1116,7 @@
             },
             "bike_repair_station-operator": {
                 "question": "Wer betreibt die Reparaturstation?",
-                "render": "Gewartet von {operator}"
+                "render": "Betrieben von {operator}"
             },
             "bike_repair_station-phone": {
                 "question": "Wie lautet die Telefonnummer des Betreibers?"
@@ -1284,8 +1498,8 @@
                 "question": "Was ist das für ein Café?"
             },
             "Name": {
-                "question": "Wie heißt diese Kneipe?",
-                "render": "Diese Kneipe heißt {name}"
+                "question": "Was ist der Name dieses Unternehmens?",
+                "render": "Das Unternehmen heißt {name}"
             }
         },
         "title": {
@@ -1295,6 +1509,33 @@
                 }
             },
             "render": "Kneipe"
+        }
+    },
+    "car_rental": {
+        "description": "Orte, an denen Sie ein Auto mieten können",
+        "name": "Autovermietung",
+        "presets": {
+            "0": {
+                "description": "Ein Ort, an dem Sie ein Auto mieten können",
+                "title": "eine Autovermietung"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Name der Autovermietung"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Diese Autovermietung hat keinen Namen"
+                    }
+                },
+                "question": "Wie lautet der Name dieser Autovermietung?",
+                "render": "Der Name der Autovermietung lautet {name}"
+            }
+        },
+        "title": {
+            "render": "Autovermietung"
         }
     },
     "charging_station": {
@@ -2486,6 +2727,11 @@
     "climbing_gym": {
         "description": "Eine Kletterhalle",
         "name": "Kletterhallen",
+        "presets": {
+            "0": {
+                "title": "Kletterhalle"
+            }
+        },
         "tagRenderings": {
             "Speed climbing?": {
                 "mappings": {
@@ -2501,8 +2747,30 @@
                 },
                 "question": "Gibt es hier eine Speedkletter-Wand?"
             },
+            "harness_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Ein Klettergurt kann hier ausgeliehen werden"
+                    },
+                    "1": {
+                        "then": "Ein Klettergurt kann hier <b>nicht</b> ausgeliehen werden"
+                    }
+                },
+                "question": "Kann man hier einen Klettergurt ausleihen?"
+            },
             "name": {
                 "question": "Wie heißt diese Kletterhalle?"
+            },
+            "shoe_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Kletterschuhe können hier ausgeliehen werden"
+                    },
+                    "1": {
+                        "then": "Kletterschuhe können hier <b>nicht</b> ausgeliehen werden"
+                    }
+                },
+                "question": "Kann man hier Kletterschuhe ausleihen?"
             }
         },
         "title": {
@@ -3429,7 +3697,7 @@
     },
     "elevator": {
         "description": "Diese Ebene zeigt Aufzüge an und fragt nach dem Betriebsstatus und den Abmessungen des Aufzugs. Nützlich für Informationen zur Zugänglichkeit für Rollstuhlfahrer",
-        "name": "Aufzug",
+        "name": "Aufzüge",
         "presets": {
             "0": {
                 "title": "einen Aufzug"
@@ -3705,6 +3973,9 @@
             },
             "3": {
                 "options": {
+                    "0": {
+                        "question": "Mit und ohne Bilder"
+                    },
                     "1": {
                         "question": "Hat mindestens ein Bild"
                     },
@@ -3750,7 +4021,7 @@
         "name": "Feuerwachen",
         "presets": {
             "0": {
-                "description": "Eine Feuerwache ist ein Ort, an dem die Feuerwehrfahrzeuge und die Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind.",
+                "description": "Eine Feuerwache ist ein Ort, an dem Feuerwehrfahrzeuge und Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind.",
                 "title": "eine Feuerwache"
             }
         },
@@ -3964,18 +4235,25 @@
             "1": {
                 "options": {
                     "0": {
-                        "question": "Vegetarische Gerichte im Angebot"
+                        "question": "Reservierung nicht erforderlich"
                     }
                 }
             },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Vegane Gerichte im Angebot"
+                        "question": "Vegetarische Gerichte im Angebot"
                     }
                 }
             },
             "3": {
+                "options": {
+                    "0": {
+                        "question": "Vegane Gerichte im Angebot"
+                    }
+                }
+            },
+            "4": {
                 "options": {
                     "0": {
                         "question": "Halal Gerichte im Angebot"
@@ -4062,8 +4340,25 @@
                 "question": "Um was für einen Ort handelt es sich?"
             },
             "Name": {
-                "question": "Wie heißt dieses Restaurant?",
-                "render": "Das Restaurant heißt {name}"
+                "question": "Was ist der Name dieses Unternehmens?",
+                "render": "Dieses Unternehmen heißt {name}"
+            },
+            "Reservation": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier ist eine Reservierung erforderlich"
+                    },
+                    "1": {
+                        "then": "Eine Reservierung ist nicht erforderlich, wird aber empfohlen, damit Sie einen Tisch bekommen"
+                    },
+                    "2": {
+                        "then": "Eine Reservierung ist an diesem Ort möglich"
+                    },
+                    "3": {
+                        "then": "Eine Reservierung ist an diesem Ort nicht möglich"
+                    }
+                },
+                "question": "Ist an diesem Ort eine Reservierung erforderlich?"
             },
             "Takeaway": {
                 "mappings": {
@@ -5559,6 +5854,11 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Behindertenparkplatz"
+                }
+            },
             "render": "Stellplatz"
         }
     },
@@ -6055,6 +6355,27 @@
             "render": "Bücherschrank"
         }
     },
+    "railway_platforms": {
+        "description": "Finden Sie alle Bahnsteige im Bahnhof und die Zugstrecken, die sie benutzen.",
+        "name": "Bahnsteige",
+        "tagRenderings": {
+            "ref": {
+                "freeform": {
+                    "placeholder": "Bahnsteignummer"
+                },
+                "question": "Wie lautet die Nummer dieses Bahnsteigs?",
+                "render": "Bahnsteig {ref}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Bahnsteig {ref}"
+                }
+            },
+            "render": "Bahnsteig"
+        }
+    },
     "rainbow_crossings": {
         "description": "Eine Ebene mit Fußgängerüberwegen in Regenbogenfarben",
         "name": "Fußgängerüberwege in Regenbogenfarben",
@@ -6141,36 +6462,42 @@
                         "question": "Recycling von Motoröl"
                     },
                     "7": {
-                        "question": "Recycling von Grünabfällen"
+                        "question": "Recycling von Leuchtstoffröhren"
                     },
                     "8": {
-                        "question": "Recycling von Glasflaschen"
+                        "question": "Recycling von Grünabfällen"
                     },
                     "9": {
-                        "question": "Recycling von Glas"
+                        "question": "Recycling von Glasflaschen"
                     },
                     "10": {
-                        "question": "Recycling von Zeitungen"
+                        "question": "Recycling von Glas"
                     },
                     "11": {
-                        "question": "Recycling von Papier"
+                        "question": "Recycling von Glühbirnen"
                     },
                     "12": {
-                        "question": "Recycling von Plastikflaschen"
+                        "question": "Recycling von Zeitungen"
                     },
                     "13": {
-                        "question": "Recycling von Kunststoffverpackungen"
+                        "question": "Recycling von Papier"
                     },
                     "14": {
-                        "question": "Recycling von Kunststoffen"
+                        "question": "Recycling von Plastikflaschen"
                     },
                     "15": {
-                        "question": "Recycling von Metallschrott"
+                        "question": "Recycling von Kunststoffverpackungen"
                     },
                     "16": {
-                        "question": "Recycling von Elektrokleingeräten"
+                        "question": "Recycling von Kunststoffen"
                     },
                     "17": {
+                        "question": "Recycling von Metallschrott"
+                    },
+                    "18": {
+                        "question": "Recycling von Elektrokleingeräten"
+                    },
+                    "19": {
                         "question": "Recycling von Restabfällen"
                     }
                 }
@@ -6230,48 +6557,54 @@
                         "then": "Motoröl kann hier recycelt werden"
                     },
                     "6": {
-                        "then": "Grünabfälle können hier recycelt werden"
+                        "then": "Hier können Leuchtstoffröhren recycelt werden"
                     },
                     "7": {
-                        "then": "Bio-Abfall kann hier recycelt werden"
+                        "then": "Grünabfälle können hier recycelt werden"
                     },
                     "8": {
-                        "then": "Glasflaschen können hier recycelt werden"
+                        "then": "Bio-Abfall kann hier recycelt werden"
                     },
                     "9": {
-                        "then": "Glas kann hier recycelt werden"
+                        "then": "Glasflaschen können hier recycelt werden"
                     },
                     "10": {
-                        "then": "Zeitungen können hier recycelt werden"
+                        "then": "Glas kann hier recycelt werden"
                     },
                     "11": {
-                        "then": "Papier kann hier recycelt werden"
+                        "then": "Hier können Glühbirnen recycelt werden"
                     },
                     "12": {
-                        "then": "Plastikflaschen können hier recycelt werden"
+                        "then": "Zeitungen können hier recycelt werden"
                     },
                     "13": {
-                        "then": "Kunststoffverpackungen können hier recycelt werden"
+                        "then": "Papier kann hier recycelt werden"
                     },
                     "14": {
-                        "then": "Kunststoff kann hier recycelt werden"
+                        "then": "Plastikflaschen können hier recycelt werden"
                     },
                     "15": {
-                        "then": "Metallschrott kann hier recycelt werden"
+                        "then": "Kunststoffverpackungen können hier recycelt werden"
                     },
                     "16": {
-                        "then": "Schuhe können hier recycelt werden"
+                        "then": "Kunststoff kann hier recycelt werden"
                     },
                     "17": {
-                        "then": "Elektrokleingeräte können hier recycelt werden"
+                        "then": "Metallschrott kann hier recycelt werden"
                     },
                     "18": {
-                        "then": "Elektrokleingeräte können hier recycelt werden"
+                        "then": "Schuhe können hier recycelt werden"
                     },
                     "19": {
-                        "then": "Nadeln können hier recycelt werden"
+                        "then": "Elektrokleingeräte können hier recycelt werden"
                     },
                     "20": {
+                        "then": "Elektrokleingeräte können hier recycelt werden"
+                    },
+                    "21": {
+                        "then": "Nadeln können hier recycelt werden"
+                    },
+                    "22": {
                         "then": "Restmüll kann hier recycelt werden"
                     }
                 },
@@ -6422,6 +6755,9 @@
         "title": {
             "render": "Schule <i>{name}</i>"
         }
+    },
+    "selected_element": {
+        "description": "Hebt das aktuell ausgewählte Element hervor. Überschreiben Sie diese Ebene, um unterschiedliche Farben zu erhalten"
     },
     "shelter": {
         "description": "Eine Ebene, die verschiedene Bauformen von Unterständen zeigt",
@@ -7185,13 +7521,69 @@
             }
         }
     },
+    "ticket_machine": {
+        "description": "Fahrkartenautomaten für ÖPNV-Tickets finden",
+        "name": "Fahrkartenautomaten",
+        "presets": {
+            "0": {
+                "title": "einen Fahrkartenautomat"
+            }
+        },
+        "tagRenderings": {
+            "operator": {
+                "freeform": {
+                    "placeholder": "Name des Betreibers"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Niederländische Eisenbahn (NS)"
+                    }
+                },
+                "question": "Wer ist der Betreiber dieses Fahrkartenautomaten?",
+                "render": "Dieser Fahrkartenautomat wird betrieben von {operator}"
+            }
+        },
+        "title": {
+            "render": "Fahrkartenautomat"
+        }
+    },
+    "ticket_validator": {
+        "description": "Finden Sie Fahrkartenentwerter, um Tickets für den öffentlichen Nahverkehr zu entwerten",
+        "name": "Fahrkartenentwerter",
+        "presets": {
+            "0": {
+                "description": "Ein Fahrkartenentwerter zur Entwertung einer Fahrkarte für öffentliche Verkehrsmittel. Dabei kann es sich entweder um ein digitales Lesegerät handeln, das eine Karte oder einen Fahrschein liest, oder um eine Maschine, die einen Fahrschein stempelt oder locht.",
+                "title": "einen Fahrkartenentwerter"
+            }
+        },
+        "tagRenderings": {
+            "barrier": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Fahrscheinentwerter ist Teil einer Zugangsbarriere"
+                    }
+                },
+                "render": "Dieser Fahrkartenentwerter ist Teil einer Zugangsbarriere vom Typ {barrier}"
+            },
+            "validator-operator": {
+                "freeform": {
+                    "placeholder": "Name des Betreibers"
+                },
+                "question": "Wer ist der Betreiber dieses Fahrkartenentwerters?",
+                "render": "Dieser Fahrkartenentwerter wird betrieben von {operator}"
+            }
+        },
+        "title": {
+            "render": "Fahrkartenentwerter"
+        }
+    },
     "toilet": {
         "description": "Eine Ebene mit (öffentlichen) Toiletten",
         "filter": {
             "0": {
                 "options": {
                     "0": {
-                        "question": "Rollstuhlgerecht"
+                        "question": "Barrierefrei"
                     }
                 }
             },
@@ -7576,7 +7968,7 @@
                         "then": "Die Haltestelle hat eine Bank"
                     },
                     "1": {
-                        "then": "Die Haltestelle hat keine Bank"
+                        "then": "Die Haltestelle hat <b>keine</b> Sitzbank"
                     },
                     "2": {
                         "then": "Die Haltestelle hat eine Bank, die separat kartiert ist"
@@ -7590,7 +7982,7 @@
                         "then": "Die Haltestelle hat einen Mülleimer"
                     },
                     "1": {
-                        "then": "Die Haltestelle hat keinen Mülleimer"
+                        "then": "Die Haltestelle hat <b>keinen</b> Mülleimer"
                     },
                     "2": {
                         "then": "Die Haltestelle hat einen Mülleimer, der separat kartiert ist"
@@ -7619,7 +8011,7 @@
                         "then": "Die Haltestelle hat einen Fahrplan, der den Abstand zwischen Abfahrten anzeigt"
                     },
                     "5": {
-                        "then": "Die Haltestelle hat keinen Fahrplan"
+                        "then": "Die Haltestelle hat <b>keinen</b> Fahrplan"
                     }
                 }
             },
@@ -7629,7 +8021,7 @@
                         "then": "Die Haltestelle ist beleuchtet"
                     },
                     "1": {
-                        "then": "Die Haltestelle ist nicht beleuchtet"
+                        "then": "Die Haltestelle hat <b>keine</b> Beleuchtung"
                     }
                 },
                 "question": "Ist die Haltestelle beleuchtet?"
@@ -7640,7 +8032,7 @@
                         "then": "Die Haltestelle hat einen Unterstand"
                     },
                     "1": {
-                        "then": "Die Haltestelle hat keinen Unterstand"
+                        "then": "Die Haltestelle hat <b>keinen</b> Unterstand"
                     },
                     "2": {
                         "then": "Die Haltestelle hat einen Unterstand, der separat kariert ist"
@@ -7666,7 +8058,7 @@
                         "then": "Die Haltestelle hat ein taktiles Pflaster"
                     },
                     "1": {
-                        "then": "Die Haltestelle hat kein taktiles Pflaster"
+                        "then": "Die Haltestelle hat <b>kein</b> taktiles Pflaster"
                     }
                 },
                 "question": "Hat die Haltestelle hat ein taktiles Pflaster?"
@@ -7699,6 +8091,14 @@
             }
         },
         "tagRenderings": {
+            "circumference": {
+                "question": "Wie groß ist der Umfang des Baumstammes?<p class='subtle'>Dies wird in einer Höhe von 1,30 m gemessen</p>",
+                "render": "Der Baumstamm hat einen Umfang von {circumference} Meter"
+            },
+            "height": {
+                "question": "Wie hoch ist dieser Baum?",
+                "render": "Dieser Baum ist {height} Meter hoch"
+            },
             "tree-decidouous": {
                 "mappings": {
                     "0": {
@@ -7738,14 +8138,6 @@
                     }
                 },
                 "question": "Wie bedeutsam ist dieser Baum? Wählen Sie die erste Antwort, die zutrifft."
-            },
-            "tree-height": {
-                "mappings": {
-                    "0": {
-                        "then": "Höhe: {height}&nbsp;m"
-                    }
-                },
-                "render": "Höhe: {height}"
             },
             "tree-heritage": {
                 "mappings": {
@@ -7804,6 +8196,52 @@
         },
         "title": {
             "render": "Baum"
+        }
+    },
+    "usersettings": {
+        "description": "Eine spezielle Ebene, die nicht für die Darstellung auf einer Karte gedacht ist, sondern für die Festlegung von Benutzereinstellungen verwendet wird",
+        "tagRenderings": {
+            "contributor-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Sie haben Code zu MapComplete mit {_code_contributions} Commits beigetragen! Das ist großartig!"
+                    }
+                }
+            },
+            "picture-license": {
+                "mappings": {
+                    "0": {
+                        "then": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC0</b> lizenziert und der Public Domain hinzugefügt. Das bedeutet, dass jeder Ihre Bilder für jeden Zweck verwenden kann. <span class='subtle'>Dies ist die Standardeinstellung.</span>"
+                    },
+                    "1": {
+                        "then": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC0</b> lizenziert und der Public Domain hinzugefügt. Das bedeutet, dass jeder Ihre Bilder für jeden Zweck verwenden kann."
+                    },
+                    "2": {
+                        "then": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC-BY 4.0</b> lizenziert, was bedeutet, dass jeder, der Ihr Bild verwendet, Sie als Urheber nennen muss"
+                    },
+                    "3": {
+                        "then": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC-BY-SA 4.0</b> lizenziert, was bedeutet, dass jeder, der Ihr Bild verwendet, Sie als Urheber nennen muss und dass Ableitungen Ihres Bildes mit der gleichen Lizenz weitergegeben werden müssen."
+                    }
+                },
+                "question": "Unter welcher Lizenz möchten Sie Ihre Bilder veröffentlichen?"
+            },
+            "translation-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Sie haben dazu beigetragen, MapComplete zu übersetzen! Das ist großartig!"
+                    }
+                }
+            },
+            "verified-mastodon": {
+                "mappings": {
+                    "0": {
+                        "then": "Es wurde ein Link zu deinem Mastodon-Profil gefunden: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
+                    },
+                    "1": {
+                        "then": "Wir haben einen Link gefunden, der aussieht wie ein Mastodon-Konto, aber nicht verifiziert ist. <a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Bearbeiten Sie Ihre Profilbeschreibung</a> und fügen Sie dort Folgendes ein: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
+                    }
+                }
+            }
         }
     },
     "veterinary": {
@@ -8045,9 +8483,6 @@
             "render": "Mülltonne"
         }
     },
-    "watermill": {
-        "name": "Wassermühlen"
-    },
     "windturbine": {
         "description": "Moderne Windmühlen zur Stromerzeugung",
         "name": "Windräder",
@@ -8076,6 +8511,10 @@
             "turbine-start-date": {
                 "question": "Wann wurde das Windrad in Betrieb genommen?",
                 "render": "Das Windrad wurde am {start_date} in Betrieb genommen."
+            },
+            "windturbine-fixme": {
+                "question": "Gibt es einen Fehler in der Kartierung, den Sie hier nicht beheben konnten? (hinterlassen Sie eine Nachricht an OpenStreetMap-Experten)",
+                "render": "Zusätzliche Informationen für OpenStreetMap-Experten: {fixme}"
             }
         },
         "title": {

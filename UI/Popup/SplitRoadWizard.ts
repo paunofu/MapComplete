@@ -22,8 +22,12 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import { ElementStorage } from "../../Logic/ElementStorage"
 import BaseLayer from "../../Models/BaseLayer"
 import FilteredLayer from "../../Models/FilteredLayer"
+import BaseUIElement from "../BaseUIElement"
+import { VariableUiElement } from "../Base/VariableUIElement"
+import ScrollableFullScreen from "../Base/ScrollableFullScreen"
+import { LoginToggle } from "./LoginButton"
 
-export default class SplitRoadWizard extends Toggle {
+export default class SplitRoadWizard extends Combine {
     // @ts-ignore
     private static splitLayerStyling = new LayerConfig(
         split_point,
@@ -52,6 +56,7 @@ export default class SplitRoadWizard extends Toggle {
             changes: Changes
             layoutToUse: LayoutConfig
             allElements: ElementStorage
+            selectedElement: UIEventSource<any>
         }
     ) {
         const t = Translations.t.split
@@ -63,6 +68,106 @@ export default class SplitRoadWizard extends Toggle {
 
         // Toggle variable between show split button and map
         const splitClicked = new UIEventSource<boolean>(false)
+
+        const leafletMap = new UIEventSource<BaseUIElement>(
+            SplitRoadWizard.setupMapComponent(id, splitPoints, state)
+        )
+
+        // Toggle between splitmap
+        const splitButton = new SubtleButton(
+            Svg.scissors_ui().SetStyle("height: 1.5rem; width: auto"),
+            new Toggle(
+                t.splitAgain.Clone().SetClass("text-lg font-bold"),
+                t.inviteToSplit.Clone().SetClass("text-lg font-bold"),
+                hasBeenSplit
+            )
+        )
+
+        const splitToggle = new LoginToggle(splitButton, t.loginToSplit.Clone(), state)
+
+        // Save button
+        const saveButton = new Button(t.split.Clone(), async () => {
+            hasBeenSplit.setData(true)
+            splitClicked.setData(false)
+            const splitAction = new SplitAction(
+                id,
+                splitPoints.data.map((ff) => ff.feature.geometry.coordinates),
+                {
+                    theme: state?.layoutToUse?.id,
+                },
+                5,
+                (coordinates) => {
+                    state.allElements.ContainingFeatures.get(id).geometry["coordinates"] =
+                        coordinates
+                }
+            )
+            await state.changes.applyAction(splitAction)
+            // We throw away the old map and splitpoints, and create a new map from scratch
+            splitPoints.setData([])
+            leafletMap.setData(SplitRoadWizard.setupMapComponent(id, splitPoints, state))
+
+            // Close the popup. The contributor has to select a segment again to make sure they continue editing the correct segment; see #1219
+            ScrollableFullScreen.collapse()
+        })
+
+        saveButton.SetClass("btn btn-primary mr-3")
+        const disabledSaveButton = new Button(t.split.Clone(), undefined)
+        disabledSaveButton.SetClass("btn btn-disabled mr-3")
+        // Only show the save button if there are split points defined
+        const saveToggle = new Toggle(
+            disabledSaveButton,
+            saveButton,
+            splitPoints.map((data) => data.length === 0)
+        )
+
+        const cancelButton = Translations.t.general.cancel
+            .Clone() // Not using Button() element to prevent full width button
+            .SetClass("btn btn-secondary mr-3")
+            .onClick(() => {
+                splitPoints.setData([])
+                splitClicked.setData(false)
+            })
+
+        cancelButton.SetClass("btn btn-secondary block")
+
+        const splitTitle = new Title(t.splitTitle)
+
+        const mapView = new Combine([
+            splitTitle,
+            new VariableUiElement(leafletMap),
+            new Combine([cancelButton, saveToggle]).SetClass("flex flex-row"),
+        ])
+        mapView.SetClass("question")
+        super([
+            Toggle.If(hasBeenSplit, () =>
+                t.hasBeenSplit.Clone().SetClass("font-bold thanks block w-full")
+            ),
+            new Toggle(mapView, splitToggle, splitClicked),
+        ])
+        this.dialogIsOpened = splitClicked
+        const self = this
+        splitButton.onClick(() => {
+            splitClicked.setData(true)
+            self.ScrollIntoView()
+        })
+    }
+
+    private static setupMapComponent(
+        id: string,
+        splitPoints: UIEventSource<{ feature: any; freshness: Date }[]>,
+        state: {
+            filteredLayers: UIEventSource<FilteredLayer[]>
+            backgroundLayer: UIEventSource<BaseLayer>
+            featureSwitchIsTesting: UIEventSource<boolean>
+            featureSwitchIsDebugging: UIEventSource<boolean>
+            featureSwitchShowAllQuestions: UIEventSource<boolean>
+            osmConnection: OsmConnection
+            featureSwitchUserbadge: UIEventSource<boolean>
+            changes: Changes
+            layoutToUse: LayoutConfig
+            allElements: ElementStorage
+        }
+    ): BaseUIElement {
         // Load the road with given id on the minimap
         const roadElement = state.allElements.ContainingFeatures.get(id)
 
@@ -96,7 +201,6 @@ export default class SplitRoadWizard extends Toggle {
             layerToShow: SplitRoadWizard.splitLayerStyling,
             state,
         })
-
         /**
          * Handles a click on the overleaf map.
          * Finds the closest intersection with the road and adds a point there, ready to confirm the cut.
@@ -137,67 +241,6 @@ export default class SplitRoadWizard extends Toggle {
                 onMapClick([mouseEvent.latlng.lng, mouseEvent.latlng.lat])
             })
         )
-
-        // Toggle between splitmap
-        const splitButton = new SubtleButton(
-            Svg.scissors_ui().SetStyle("height: 1.5rem; width: auto"),
-            t.inviteToSplit.Clone().SetClass("text-lg font-bold")
-        )
-        splitButton.onClick(() => {
-            splitClicked.setData(true)
-        })
-
-        // Only show the splitButton if logged in, else show login prompt
-        const loginBtn = t.loginToSplit
-            .Clone()
-            .onClick(() => state.osmConnection.AttemptLogin())
-            .SetClass("login-button-friendly")
-        const splitToggle = new Toggle(splitButton, loginBtn, state.osmConnection.isLoggedIn)
-
-        // Save button
-        const saveButton = new Button(t.split.Clone(), () => {
-            hasBeenSplit.setData(true)
-            state.changes.applyAction(
-                new SplitAction(
-                    id,
-                    splitPoints.data.map((ff) => ff.feature.geometry.coordinates),
-                    {
-                        theme: state?.layoutToUse?.id,
-                    }
-                )
-            )
-        })
-
-        saveButton.SetClass("btn btn-primary mr-3")
-        const disabledSaveButton = new Button("Split", undefined)
-        disabledSaveButton.SetClass("btn btn-disabled mr-3")
-        // Only show the save button if there are split points defined
-        const saveToggle = new Toggle(
-            disabledSaveButton,
-            saveButton,
-            splitPoints.map((data) => data.length === 0)
-        )
-
-        const cancelButton = Translations.t.general.cancel
-            .Clone() // Not using Button() element to prevent full width button
-            .SetClass("btn btn-secondary mr-3")
-            .onClick(() => {
-                splitPoints.setData([])
-                splitClicked.setData(false)
-            })
-
-        cancelButton.SetClass("btn btn-secondary block")
-
-        const splitTitle = new Title(t.splitTitle)
-
-        const mapView = new Combine([
-            splitTitle,
-            miniMap,
-            new Combine([cancelButton, saveToggle]).SetClass("flex flex-row"),
-        ])
-        mapView.SetClass("question")
-        const confirm = new Toggle(mapView, splitToggle, splitClicked)
-        super(t.hasBeenSplit.Clone(), confirm, hasBeenSplit)
-        this.dialogIsOpened = splitClicked
+        return miniMap
     }
 }

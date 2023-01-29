@@ -80,7 +80,7 @@ export default class ShareScreen extends Combine {
             includeCurrentBackground.GetValue().map(
                 (includeBG) => {
                     if (includeBG) {
-                        return "background=" + currentLayer.data.id
+                        return "background=" + currentLayer.data?.id
                     } else {
                         return null
                     }
@@ -110,25 +110,18 @@ export default class ShareScreen extends Combine {
             { urlName: "fs-search", human: tr.fsSearch },
             { urlName: "fs-welcome-message", human: tr.fsWelcomeMessage },
             { urlName: "fs-layers", human: tr.fsLayers },
-            { urlName: "layer-control-toggle", human: tr.fsLayerControlToggle, reverse: true },
             { urlName: "fs-add-new", human: tr.fsAddNew },
             { urlName: "fs-geolocation", human: tr.fsGeolocation },
         ]
 
         for (const swtch of switches) {
-            const checkbox = new CheckBox(Translations.W(swtch.human), !swtch.reverse)
+            const checkbox = new CheckBox(Translations.W(swtch.human))
             optionCheckboxes.push(checkbox)
             optionParts.push(
                 checkbox.GetValue().map((isEn) => {
                     if (isEn) {
-                        if (swtch.reverse) {
-                            return `${swtch.urlName}=true`
-                        }
                         return null
                     } else {
-                        if (swtch.reverse) {
-                            return null
-                        }
                         return `${swtch.urlName}=false`
                     }
                 })
@@ -168,7 +161,7 @@ export default class ShareScreen extends Combine {
                 return `<span class='literal-code iframe-code-block'>
                          &lt;iframe src="${url}" allow="geolocation" width="100%" height="100%" style="min-width: 250px; min-height: 250px" title="${
                     layout.title?.txt ?? "MapComplete"
-                } with MapComplete"&gt;&lt;/iframe&gt 
+                } with MapComplete"&gt;&lt;/iframe&gt
                     </span>`
             })
         )

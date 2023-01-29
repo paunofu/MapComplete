@@ -9,7 +9,8 @@
     "de": "Feuerlöscher",
     "it": "Cartina degli estintori.",
     "nl": "Kaart van brandblussers",
-    "es": "Mapa de extintores"
+    "es": "Mapa de extintores",
+    "ca": "Mapa d'extintors"
   },
   "minzoom": 14,
   "source": {
@@ -44,7 +45,8 @@
     "it": "Livello della mappa che mostra gli idranti antincendio.",
     "nl": "Kaartlaag met brandblussers.",
     "da": "Kortlag til visning af ildslukkere.",
-    "es": "Capa del mapa que muestra extintores."
+    "es": "Capa del mapa que muestra extintores.",
+    "ca": "Capa que mostra extintors."
   },
   "tagRenderings": [
     {
@@ -130,7 +132,8 @@
         "it": "una estintore",
         "nl": "een brandblusser",
         "da": "en ildslukker",
-        "es": "un extintor"
+        "es": "un extintor",
+        "ca": "un extintor"
       },
       "description": {
         "en": "A fire extinguisher is a small, portable device used to stop a fire",
@@ -141,7 +144,8 @@
         "it": "Un estintore è un dispositivo portatile di piccole dimensioni usato per spegnere un incendio",
         "nl": "Een brandblusser is een klein, draagbaar apparaat om een brand te blussen",
         "da": "En ildslukker er en lille, bærbar beholder, der bruges til at stoppe en brand",
-        "es": "Un extintor es un dispositivo pequeño y portátil utilizado para parar un fuego"
+        "es": "Un extintor es un dispositivo pequeño y portátil utilizado para parar un fuego",
+        "ca": "Un extintor és un dispositiu petit i portàtil utilitzat per a para un foc"
       }
     }
   ],

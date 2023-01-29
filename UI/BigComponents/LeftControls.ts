@@ -13,18 +13,11 @@ import { VariableUiElement } from "../Base/VariableUIElement"
 import FeatureInfoBox from "../Popup/FeatureInfoBox"
 import CopyrightPanel from "./CopyrightPanel"
 import FeaturePipelineState from "../../Logic/State/FeaturePipelineState"
-import { FixedUiElement } from "../Base/FixedUiElement"
+import Hotkeys from "../Base/Hotkeys"
+import { DefaultGuiState } from "../DefaultGuiState"
 
 export default class LeftControls extends Combine {
-    constructor(
-        state: FeaturePipelineState,
-        guiState: {
-            currentViewControlIsOpened: UIEventSource<boolean>
-            downloadControlIsOpened: UIEventSource<boolean>
-            filterViewIsOpened: UIEventSource<boolean>
-            copyrightViewIsOpened: UIEventSource<boolean>
-        }
-    ) {
+    constructor(state: FeaturePipelineState, guiState: DefaultGuiState) {
         const currentViewFL = state.currentView?.layer
         const currentViewAction = new Toggle(
             new Lazy(() => {
@@ -73,7 +66,7 @@ export default class LeftControls extends Combine {
             guiState.downloadControlIsOpened.setData(true)
         )
 
-        const downloadButtonn = new Toggle(
+        const downloadButton = new Toggle(
             toggledDownload,
             undefined,
             state.featureSwitchEnableExport.map(
@@ -94,11 +87,20 @@ export default class LeftControls extends Combine {
         const toggledFilter = new MapControlButton(Svg.layers_svg()).onClick(() =>
             guiState.filterViewIsOpened.setData(true)
         )
+        state.featureSwitchFilter.addCallbackAndRun((f) => {
+            Hotkeys.RegisterHotkey(
+                { nomod: "B" },
+                Translations.t.hotkeyDocumentation.openLayersPanel,
+                () => {
+                    guiState.filterViewIsOpened.setData(!guiState.filterViewIsOpened.data)
+                }
+            )
+        })
 
         const filterButton = new Toggle(toggledFilter, undefined, state.featureSwitchFilter)
 
         const mapSwitch = new Toggle(
-            new BackgroundMapSwitch(state, state.backgroundLayer),
+            new BackgroundMapSwitch(state, state.backgroundLayer, { enableHotkeys: true }),
             undefined,
             state.featureSwitchBackgroundSelection
         )
@@ -120,7 +122,7 @@ export default class LeftControls extends Combine {
             state.featureSwitchWelcomeMessage
         )
 
-        super([currentViewAction, filterButton, downloadButtonn, copyright, mapSwitch])
+        super([currentViewAction, filterButton, downloadButton, copyright, mapSwitch])
 
         this.SetClass("flex flex-col")
     }

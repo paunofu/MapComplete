@@ -922,6 +922,7 @@ The following layers are included in MapComplete:
   - [ambulancestation](./Layers/ambulancestation.md)
   - [artwork](./Layers/artwork.md)
   - [atm](./Layers/atm.md)
+  - [bank](./Layers/bank.md)
   - [barrier](./Layers/barrier.md)
   - [bench](./Layers/bench.md)
   - [bench_at_pt](./Layers/bench_at_pt.md)
@@ -1033,6 +1034,7 @@ The following layers are included in MapComplete:
   - [transit_stops](./Layers/transit_stops.md)
   - [tree_node](./Layers/tree_node.md)
   - [type_node](./Layers/type_node.md)
+  - [usersettings](./Layers/usersettings.md)
   - [veterinary](./Layers/veterinary.md)
   - [viewpoint](./Layers/viewpoint.md)
   - [village_green](./Layers/village_green.md)
@@ -1040,7 +1042,6 @@ The following layers are included in MapComplete:
   - [walls_and_buildings](./Layers/walls_and_buildings.md)
   - [waste_basket](./Layers/waste_basket.md)
   - [waste_disposal](./Layers/waste_disposal.md)
-  - [watermill](./Layers/watermill.md)
   - [windturbine](./Layers/windturbine.md)
  
 
