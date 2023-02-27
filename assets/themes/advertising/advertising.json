@@ -460,8 +460,8 @@
           },
           "render": {
             "ca": "Lumiós {luminous}",
-            "es": "Luminoso {lit}",
-            "en": "Lumious {lit}"
+            "es": "Luminoso {luminous}",
+            "en": "Lumious {luminous}"
           },
           "question": {
             "ca": "Aquest element té il·luminació propia?",
