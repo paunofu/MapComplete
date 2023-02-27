@@ -968,6 +968,21 @@
         },
         {
           "tags": [
+            "advertising=screen"
+          ],
+          "title": {
+            "ca": "una patalla sobre una paret",
+            "es": "una pantalla sobre una pared",
+            "en": "a screen mounted on a wall"
+          },
+          "preciseInput": {
+            "preferredBackground": "map",
+            "snapToLayer": "walls_and_buildings",
+            "maxSnapDistance": 5
+          }
+        },
+        {
+          "tags": [
             "advertising=sculpture"
           ],
           "title": {
