@@ -771,9 +771,9 @@
                   ]
                 },
                 "then": {
-                  "ca": "Pots veure publicitat per {sides} costat",
-                  "es": "Puedes ver publicidad por {sides} lado",
-                  "en": "You can see adverstismetns from {sides} side"
+                  "ca": "Pots veure publicitat per 1 costa",
+                  "es": "Puedes ver publicidad por 1 lado",
+                  "en": "You can see adverstismetns from 1 side"
                 }
               },
               {
@@ -783,9 +783,9 @@
                   ]
                 },
                 "then": {
-                  "ca": "Pots veure publicitat per {sides} costats",
-                  "es": "Puedes ver publicidad por {sides} lados",
-                  "en": "You can see adverstismetns from {sides} sides"
+                  "ca": "Pots veure publicitat per 2 costats",
+                  "es": "Puedes ver publicidad por 2 lados",
+                  "en": "You can see adverstismetns from 2 sides"
                 }
               },
               {
@@ -795,9 +795,9 @@
                   ]
                 },
                 "then": {
-                  "ca": "Pots veure publicitat per {sides} costats",
-                  "es": "Puedes ver publicidad por {sides} lados",
-                  "en": "You can see adverstismetns from {sides} sides"
+                  "ca": "Pots veure publicitat per 3 costats",
+                  "es": "Puedes ver publicidad por 3 lados",
+                  "en": "You can see adverstismetns from 3 sides"
                 }
               },{
                 "if": {
@@ -806,9 +806,9 @@
                   ]
                 },
                 "then": {
-                  "ca": "Pots veure publicitat per {sides} costats",
-                  "es": "Puedes ver publicidad por {sides} lados",
-                  "en": "You can see adverstismetns from {sides} sides"
+                  "ca": "Pots veure publicitat per 4 costats",
+                  "es": "Puedes ver publicidad por 4 lados",
+                  "en": "You can see adverstismetns from 4 sides"
                 }
               }
             ]
