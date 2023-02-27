@@ -417,9 +417,9 @@
             "en": "Lit {lit}"
           },
           "question": {
-            "ca": "Aquest element està il·luminat?",
-            "es": "Este elemento está iluminado?",
-            "en": "This feature is lit?"
+            "ca": "Aquest element està il·luminat de forma externa? (p.e. un focus)",
+            "es": "Este elemento está iluminado de forma externa? (p.e un foco)",
+            "en": "This feature is lit? (e.g. a spotlight)"
           },
           "freeform": {
             "key": "lit"
@@ -452,6 +452,53 @@
           ]
         },
         {
+          "id": "luminous",
+          "condition": {
+            "and": [
+              "advertising~billboard", "advertising~column", "advertising~poster_box", "advertising~board", "advertising~sign", "advertising~totem"
+            ]
+          },
+          "render": {
+            "ca": "Lumiós {luminous}",
+            "es": "Luminoso {lit}",
+            "en": "Lumious {lit}"
+          },
+          "question": {
+            "ca": "Aquest element té il·luminació propia?",
+            "es": "Este elemento tiene iluminació propia?",
+            "en": "This feature has its own illumination?"
+          },
+          "freeform": {
+            "key": "luminous"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "luminous=yes"
+                ]
+              },
+              "then": {
+                "ca": "Aquest element té il·luminació propia",
+                "es": "Este elemento tiene iluminació propia",
+                "en": "This feature has its own illumination"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "luminous=no"
+                ]
+              },
+              "then": {
+                "ca": "Aqust element no té il·luminació propia",
+                "es": "Este elemento no tiene iluminació propia",
+                "en": "This feature has not its own illumination"
+              }
+            }
+          ]
+        },
+        {
           "id": "animated",
           "render": {
             "ca": " Animat amb {animated}",
@@ -459,9 +506,9 @@
             "en": "Animated with {animated}"
           },
           "question": {
-            "ca": "Com canvia els anuncis aquest element?",
-            "es": "¿Como cambia los anuncios este elemento?",
-            "en": "Does this feature cycle through multiple advertisements automatically?"
+            "ca": "Com canvien els anuncis d'aquest element?",
+            "es": "¿Como cambian los anuncios de este elemento?",
+            "en": "How this feature cycle through multiple advertisements automatically?"
           },
           "freeform": {
             "key": "animated"
